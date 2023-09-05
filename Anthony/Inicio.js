@@ -54,22 +54,17 @@ talleres.forEach(({ nombre, texto, imagen }) => {
 
 const MensajesMotivadores = [
     {
-        mensaje: "Sé el cambio que quieres ver en el mundo",
-        autor: "Mahatma Gandhi"
+        mensaje: "Una onza de prevención vale más que una libra de cura",
+        autor: "Benjamin Franklin"
     },
     {
-        mensaje: "Intenta y falla, pero nunca falles en intentarlo",
-        autor: "Jared Leto"
+        mensaje: "La preocupación por el hombre y su seguridad siempre debe ser el interés principal de todos los esfuerzos",
+        autor: "Albert Einstein"
     },
     {
         mensaje: "No busques los errores, busca un remedio",
         autor: "Henry Ford"
-    },
-    {
-        mensaje: "El éxito depende del esfuerzo",
-        autor: "Sófocles"
-    },
-
+    }
 ];
 
 function Mensaje(mensaje, autor) {
@@ -137,6 +132,41 @@ MensajesMotivadores.forEach(({ mensaje, autor }) => {
     }
 }());
 
+function GeneradorHeader() {
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <!-- Tu código HTML del encabezado aquí -->
+    `;
+    return div.firstChild;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const contenedoresHeader = document.querySelectorAll('#generador-header');
+
+    // Itera sobre los elementos y agrega el encabezado a cada uno
+    contenedoresHeader.forEach((contenedorHeader) => {
+        const headerElement = GeneradorHeader();
+        contenedorHeader.appendChild(headerElement);
+    });
+});
+function GeneradorHeader() {
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <!-- Tu código HTML del encabezado aquí -->
+        <h1> aaaaaaaaa</h1>
+    `;
+    return div.firstChild;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const contenedoresHeader = document.querySelectorAll('#generador-header');
+
+    // Itera sobre los elementos y agrega el encabezado a cada uno
+    contenedoresHeader.forEach((contenedorHeader) => {
+        const headerElement = GeneradorHeader();
+        contenedorHeader.appendChild(headerElement);
+    });
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////CARRUSEL-CIRCULAR//////////////////////////////////////////////////////////////////
