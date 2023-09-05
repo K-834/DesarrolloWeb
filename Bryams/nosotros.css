@@ -1,0 +1,10 @@
+@media (max-width:768px) {
+    #intro{
+    width: 90% !important; }
+    
+}
+
+.nosotros {
+    text-align: justify;
+    line-height: 2em;
+}
