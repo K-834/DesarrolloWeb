@@ -306,10 +306,11 @@
             </div>
         </center>
     </section>
-    <script src="../alertas.js"></script>
-    
+            
     <%@include file="../Plantilla/SesionModal.jsp" %>
     
     <%@include file="../Plantilla/citaModal.jsp" %>
     
+    <script src="../alertas.js"></script>
+
     <%@include file="../Plantilla/footer.jsp" %>
