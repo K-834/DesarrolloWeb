@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap');
+
+* {
+    font-family: 'Ubuntu';
+  }
+
+  .servicios{
+    margin: 0 auto;
+    max-width: 1400px;
+    margin-top: 100px;
+  }
+
+body{
+    margin: 0 auto;
+    width: 100%;
+    font-family: 'Ubuntu';
+    color: #333;
+    background-image: url("../Medicinas/ImagenesProductos/fondo.png");
+}
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 40px 0;
+    color: #242424;
+    margin-bottom: 30px;
+}
+  table {
+    width: 100%;
+    max-width:  100%;
+    table-layout: fixed;
+    margin: auto;
+    text-align: left;
+    margin-bottom: 100px;
+    border-radius: 5px;
+
+    border-collapse: collapse;
+    box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 15%);
+    overflow: hidden; 
+    line-height: 2.5rem;
+    background-color: #ffffff;
+    background-image: none;
+  }
+  
+  th {
+    background-color: rgb(211, 183, 124);
+  }
+  
+  th,
+  td {
+    padding: 6px 10px;
+    font-size: 15px;
+
+  }
+  
+  th:nth-child(1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 20%;
+
+  }
+  
+  td:nth-child(2) {
+    width: 15%;
+
+  }
+  
+  th:nth-child(3) {
+    width: 15%;
+  }
+
+  th:nth-child(4) {
+    width: 10%;
+  }
+
+  th:nth-child(5) {
+    width: 20%;
+  }
+
+  th:nth-child(6) {
+    width: 20%;
+  }
+  
+  progress-meter {
+    display: block;
+    height: 10px;
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 1px;
+    margin-right: 2rem;
+    position: relative;
+  }
+  
+  progress-percent {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    width: calc(var(--progress) * 1%); 
+    background-color: rgb(32, 32, 32);
+    font-size: 70%;
+    color: grey;
+  }
+  
+  progress-percent[style="--progress: 100"] {
+    background-color: rgb(0, 255, 0);
+  }
+  
+  progress-percent::after {
+    counter-reset: percent var(--progress);
+    content: counter(percent) '%';
+    position: absolute;
+    right: -2rem;
+    bottom: -0.9rem;
+  }
+  
+  progress-percent[style="--progress: 100"]::after {
+    content: '✓';
+    right: -1rem;
+    bottom: -0.9rem;
+  }
+  
+  
+  /* define the shared tag styles */
+  :where(iniciando-tag, progreso-tag, finalizado-tag):before {
+    font-size: 0.9rem;
+    color: white;
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+  
+  iniciando-tag:before {
+    background-color: rgb(180, 180, 180);
+    content: "Pendiente";
+  }
+  
+  progreso-tag:before {
+    background-color: rgb(62, 139, 255);
+    content: "En Progreso";
+  }
+  
+  finalizado-tag:before {
+    background-color: rgb(0, 255, 34);
+    content: "Finalizado";
+  }
