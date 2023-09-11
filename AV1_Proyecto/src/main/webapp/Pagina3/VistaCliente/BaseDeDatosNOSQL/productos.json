@@ -1,0 +1,202 @@
+[
+    {
+        "id": "M000001",
+        "type": "medicine",
+        "name": "Gastroped",
+        "price": 55,
+        "path": "ImagenesProductos/gastropet.jpeg", 
+        "description": "producto en stock",
+        "recipe": true,
+        
+        "information":
+        [
+            ["Acerca del producto", "Gastropet 10mg está indicado para actuar a nivel del estómago disminuyendo la producción de ácido gástrico. Es un medicamento que va a impedir la formación de ácido clorhídrico. Esta función es la que consigue controlar la cantidad de ácido que se libera en el estómago."],
+            ["Composición", "Omeprazol 10mg"],
+            ["Indicaciones", "Actúa a nivel del estómago disminuyendo la producción de ácido gástrico. Es un fármaco que va a impedir la formación de ácido clorhídrico. Esta función es la que consigue controlar la cantidad de ácido que se libera en el estómago.Un exceso de ácido, por distintos motivos puede ocasionar úlceras gástricas en nuestra mascota, lesiones en la mucosa gástrica de distinta profundidad. Gastropet está indicado en los trastornos en los que es necesario controlar la liberación de ácido."],
+            ["Dosis:", "<p style='text-align:justify;'<p>Perros:</p><li><strong>Úlcera gástrica:</strong> 1 comprimido de gastropet cada 10 o 20 kg de peso: 1 vez al día durante 10 y hasta 30 días. Equivale a 0.5 – 1 mg/kg.</li><li><strong>Úlceras graves insensibles a los bloqueantes H2:</strong> 1 comprimido de gastropet cada 10 kg de peso: 1 vez al día durante 10 y hasta 30 días. Equivale a 1 mg/kg.</li><li><strong>Esofagitis:</strong> 1 comprimido de gastropet cada 5 o 10 kg de peso: 1 vez al día durante 10 y hasta 30 días. Equivale a 1 a 2 mg/kg.</li><li><strong>Infecciones con Helicobacter pylori:</strong> ½ comprimido de gastropet cada 10 kg de peso, 1 vez al día durante 10 y hasta 30 días. Equivale a 0.5 mg/kg.Combinado con metronidazol y amoxicilina o según criterio del veterinario.</li><p>Gatos:</p><li><strong>Úlceras en felinos:</strong> 1 comprimido de gastropet cada 10 kg de peso: 1 o 2 veces al día durante 10 días o según criterio del veterinario. Equivale a 1 mg/kg.</li> "]
+    
+        ]
+
+        
+    },
+    {
+        "id": "M000002",
+        "type": "medicine",
+        "name": "Dragxicilina",
+        "price": 45,
+        "path": "ImagenesProductos/dragxicilina.jpg", 
+        "description": "producto en stock",
+        "information":
+        [
+            ["Acerca del producto", "Antibacteriano. Indicado en el tratamiento de infecciones bacterianas ocasionadas por microorganismos Gram positivos (Staphyloccoccus spp., Streptococcus spp., Corynebacterium spp.) y Gram negativos (Escherichia spp., Proteus spp. y Pasteurella spp.)."],
+            ["Composición", "<br>Cada 5 ml de suspensión oral reconstituida contiene:<br>Amoxicilina Trihidrato 287 mg (Equivalente a 250 mg de Amoxicilina Anhidra), Excipientes y aromatizantes c.s.p. 5 ml."],
+            ["Indicaciones", "<br>Instrucciones para la preparación de 60 mL de suspensión oral:<br>Agitar el frasco para remover el polvo contenido en su interior. Agregar al frasco 34 mL de agua hervida fría usando el vaso de medida. Tapar el frasco y agitar vigorosamente hasta obtener una suspensión libre de grumos."],
+            ["Vía de administración y dosis", "<br>Vía oral.<br>Dosis de principio:<br>10 mg de Amoxicilina Anhidra cada 12 horas por 5 a 7 días, o bien, por 48 horas después de cesar los síntomas."],
+            ["Dosis de producto", "1 ml de suspensión por cada 5 kilos de peso cada 12 horas por 5 a 7 días, o bien, por 48 horas después de cesar los síntomas."],
+            ["Contrainidicaciones", "No utilizar en pacientes hipersensibles a las Penicilinas o antibióticos Beta-Lactámicos."]
+        ]    
+    },
+
+    {
+        "id": "M000003",
+        "type": "medicine",
+        "name": "Previcox",
+        "price": 60,
+        "path": "ImagenesProductos/previcox.jpg", 
+        "description": "producto en stock",
+        "information":
+        [
+            ["Indicaciones", "PREVICOX® está indicado en perros para el alivio del dolor y de la inflamación asociados a la osteoartritis y para el control del dolor y la inflamación postoperatorio asociados con cirugías ortopédicas, de tejidos blandos y odontológicas."],
+            ["Composición", "Cada comprimido de 237 mg de peso contiene 57 mg de Firocoxib. Cada comprimido de 947 mg de peso contiene 227 mg de Firocoxib. Excipientes c.s.p., para 1 comprimido."],
+            ["Dosis y modo de uso", "Administrar 5 mg/kg de peso una vez al día por vía oral. PREVICOX® son comprimidos divisibles, para asegurar una dosis exacta con sabor ahumado caramelo, para hacerlos más atractivos para el perro, facilitando su administración."],
+            ["Precauciones", "Venta bajo fórmula del médico veterinario. Manténgase fuera del alcance de los niños y animales domésticos."],
+            ["Presentación", "Blíster por 10 comprimidos de 57 mg y 227 mg. Cajas por 1 y 3 blíster.Frasco por 60 comprimidos de 57 mg y 227 mg."]
+        ]    
+    },
+
+    {
+        "id": "M000004",
+        "type": "medicine",
+        "name": "Meloxic",
+        "price": 25,
+        "path": "ImagenesProductos/meloxic.jpg", 
+        "description": "producto en stock",
+        "information":
+        [
+            ["Inidicaciones", "<p>En perros y gatos, Como analgésico, antiinflamatorio y antipirético en:</p><ul><li>Trastornos músculo-esqueléticos agudos y crónicos: Displasia de cadera, artritis, osteoartrosis, disco espondilitis.</li><li>Reducción del dolor pre y post-operatorio, tras cirugía ortopédica y de tejidos blandos: Ovario histerectomías, castraciones, ablación de conducto auditivo externo, etc.</li><li>Procedimientos diagnósticos que generen dolor: Toracentesis, Amniocentesis, etc.</li><li>En todas aquellas patologías donde se presente dolor, inflamación y/o fiebre, para contrarrestar la acción de las prostaglandinas generadoras de estos síntomas.</li></ul>"],
+            ["Dosis y vía de administración", "<p><strong>Perros: </strong></p><ul><li>En el primer día de tratamiento, administrar una dosis única de 0,2 mg por Kilo de peso, equivalente a 1 mL por 7,5 Kg. (En la práctica 2 gotas por 1 Kilo de peso).</li><li>Como continuación de este tratamiento vía oral ó del tratamiento con Meloxic 0,5% inyectable, administrar a partir del segundo día, una dosis de 0.1 mg por Kg, equivalente a 1 mL por 15 Kg. (En la práctica 1 gota por 1 Kilo de peso), cada 24 horas, durante 5 a 7 días. Otra indicación o duración del tratamiento a criterio del Médico Veterinario.</li></ul><p>&nbsp;</p><p><strong>Gatos:</strong></p><ul><li>Administración de una dosis de 0,3 mg por kg de peso, equivalente a 1 mL por 5 kilos. (En la práctica 3 gotas por 1 Kg de peso).</li><li>Según criterio del Médico Veterinario, como continuación de este tratamiento vía oral ó del tratamiento con Meloxic 0,5% inyectable, administrar a partir del segundo día, una dosis de 0.1 mg por Kilo, equivalente a 1 mL por 15 Kg. (En la práctica 1 gota por 1 Kilo de peso), cada 24 horas, durante 5 a 7 días. Otra indicación o duración del tratamiento a criterio del Médico Veterinario.</li></ul>"]
+        ]  
+    },
+    
+    {
+        "id": "M000005",
+        "type": "medicine",
+        "name": "Pacifor",
+        "price": 38.40,
+        "path": "ImagenesProductos/Pacifor.jpg", 
+        "description": "producto en stock",
+        "information":
+        [
+            ["Composición", "<p></p><p>Cada 100 mL de solución contiene:<br>Acepromazina Maleato.................1,35 g<br>(Equivalente a 1 g de Acepromazina base)<br>Excipientes c.s.p…......................100 mL</p><p></p>"],
+            ["Indicaciones", "<p></p><p style='TEXT-ALIGN: justify'><strong>Pacifor<sup>®</sup></strong><sup> </sup>Solución oral, está indicado como agente sedante (tranquilizante) para perros y gatos.</p><p></p>"],
+            ["Instrucciones de uso", "El efecto tranquilizante demora entre 30 y 40 minutos. Colocar el animal en un ambiente tranquilo. La duración del efecto es de 6 a 12 horas."],
+            ["Vía de administración y dosis", "<p></p><p>Vía oral. </p><p><strong>Dosis del producto: </strong></p><ul><li>Perros: 1 a 2 gotas por Kg de peso (0,5 a 1 mg/Kg).</li><li>Gatos. 2 a 3 gotas por Kg de peso (1 a 1,5 mg/Kg).</li></ul><p></p>"]
+   
+        ]
+    },
+
+    {
+        "id": "M000006",
+        "type": "medicine",
+        "name": "Simparica Trio",
+        "price": 63.00,
+        "path": "ImagenesProductos/simparica.png", 
+        "description": "producto en stock",
+        "information":
+        [
+            ["Composición", "<p></p><p>Cada 100 mL de solución contiene:<br>Acepromazina Maleato.................1,35 g<br>(Equivalente a 1 g de Acepromazina base)<br>Excipientes c.s.p…......................100 mL</p><p></p>"],
+            ["Indicaciones", "<p></p><p style='TEXT-ALIGN: justify'><strong>Pacifor<sup>®</sup></strong><sup> </sup>Solución oral, está indicado como agente sedante (tranquilizante) para perros y gatos.</p><p></p>"],
+            ["Instrucciones de uso", "El efecto tranquilizante demora entre 30 y 40 minutos. Colocar el animal en un ambiente tranquilo. La duración del efecto es de 6 a 12 horas."],
+            ["Vía de administración y dosis", "<p></p><p>Vía oral. </p><p><strong>Dosis del producto: </strong></p><ul><li>Perros: 1 a 2 gotas por Kg de peso (0,5 a 1 mg/Kg).</li><li>Gatos. 2 a 3 gotas por Kg de peso (1 a 1,5 mg/Kg).</li></ul><p></p>"]
+   
+        ]
+    },
+    {
+        "id": "M000007",
+        "type": "medicine",
+        "name": "Apetipet",
+        "price": 198.00,
+        "path": "ImagenesProductos/apetipet.jpg", 
+        "description": "producto en stock",
+        "information":
+        [
+            ["Composición", "<p></p><p>Cada 100 mL de solución contiene:<br>Acepromazina Maleato.................1,35 g<br>(Equivalente a 1 g de Acepromazina base)<br>Excipientes c.s.p…......................100 mL</p><p></p>"],
+            ["Indicaciones", "<p></p><p style='TEXT-ALIGN: justify'><strong>Pacifor<sup>®</sup></strong><sup> </sup>Solución oral, está indicado como agente sedante (tranquilizante) para perros y gatos.</p><p></p>"],
+            ["Instrucciones de uso", "El efecto tranquilizante demora entre 30 y 40 minutos. Colocar el animal en un ambiente tranquilo. La duración del efecto es de 6 a 12 horas."],
+            ["Vía de administración y dosis", "<p></p><p>Vía oral. </p><p><strong>Dosis del producto: </strong></p><ul><li>Perros: 1 a 2 gotas por Kg de peso (0,5 a 1 mg/Kg).</li><li>Gatos. 2 a 3 gotas por Kg de peso (1 a 1,5 mg/Kg).</li></ul><p></p>"]
+   
+        ]
+    },
+
+    {
+        "id": "P000001",
+        "type": "food",
+        "name": "DogExtreme Adulto Salmon 1kg",
+        "price": 30,
+        "path": "https://superpet.pe/11033-home_default/dogxtreme-dog-salmon-and-rice-3-kg.jpg"
+    },
+
+    {
+        "id": "P000002",
+        "type": "food",
+        "name": "Mio Cane Premium Adulto (15kg)",
+        "price": 185.90,
+        "path": "https://superpet.pe/13089-home_default/mio-cane-premium-adulto.jpg"
+    },
+
+    {
+        "id": "P000003",
+        "type": "food",
+        "name": "Salvaje Adulto Pollo (15kg)",
+        "price": 148.40,
+        "path": "https://superpet.pe/11040-home_default/salvaje-adulto-pollo-15-kg.jpg"
+    },
+    {
+        "id": "P000004",
+        "type": "food",
+        "name": "Pro-Plan Adultos mayores de 7 años (15kg)",
+        "price": 406.50,
+        "path": "https://superpet.pe/12992-home_default/-proplan-adulto-mayores-de-7-aos-3kg.jpg"
+    },
+    {
+        "id": "P000005",
+        "type": "food",
+        "name": "Nath Perro Mediano Adulto (12kg)",
+        "price": 259.90,
+        "path": "https://superpet.pe/16101-home_default/nath-dog-adult-medium-3-kg.jpg"
+    },
+
+    {
+        "id": "T000001",
+        "type": "toy",
+        "name": "30% Juguete Pet's Fun Goma Pelota Tenis",
+        "price": 16.79,
+        "path": "https://wongfood.vteximg.com.br/arquivos/ids/623100-1000-1000/JUGUETE-GOMA-PELOTA-TENIS-JUGUETE-GOMA-PELOT-1-328150425.jpg?v=638146606270970000"
+    },
+
+    {
+        "id": "T000002",
+        "type": "toy",
+        "name": "Juguete Pet's Fun Goma Rama",
+        "price": 11.89,
+        "path": "https://wongfood.vteximg.com.br/arquivos/ids/620569-1000-1000/JUGUETE-GOMA-RAMA-1-328150423.jpg?v=638134626527870000"
+    },
+
+    {
+        "id": "T000003",
+        "type": "toy",
+        "name": "Juguete Pet's Fun Pelota con Sonido",
+        "price": 9.09,
+        "path": "https://wongfood.vteximg.com.br/arquivos/ids/620567-1000-1000/JUGUETE-PELOTA-CON-SONIDO-JUGUETE-PELOTA-CON-1-328150420.jpg?v=638134626523330000"
+    },
+
+    {
+        "id": "T000002",
+        "type": "toy",
+        "name": "Juguete para Perros Pet Care Soga Delgada Verde",
+        "price": 9.59,
+        "path": "https://wongfood.vteximg.com.br/arquivos/ids/516954-1000-1000/JUGUETE-DE-SOGA-PARA-PERROS-VERDE-1-254617941.jpg?v=637789953718170000"
+    },
+    
+    {
+        "id": "T000002",
+        "type": "toy",
+        "name": "30% Juguete Pet's Fun Goma Boomerang Tenis",
+        "price": 15.39,
+        "path": "https://wongfood.vteximg.com.br/arquivos/ids/623099/Juguete-Pet-s-Fun-Goma-Tenis-1-328150424.jpg?v=638146606268800000"
+    }
+    
+
+
+]
+
