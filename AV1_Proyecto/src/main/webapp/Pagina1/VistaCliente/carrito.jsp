@@ -16,7 +16,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-            <a class="navbar-brand" href="#"> <img src="../Img/logo.png">  </a>
+            <a class="navbar-brand" href="#"> <img src="logo.png">  </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../../Home/index.jsp" style="color: red;" >Inicio<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.jsp" style="color: red;" >Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"style="color: black;">Ofertas del Dia </a>
@@ -40,7 +40,7 @@
                 </form>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../Carrito/carrito.jsp" style="color: darkblue">Carrito </a>
+                        <a class="nav-link" href="#" style="color: darkblue">Carrito </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -117,7 +117,7 @@
                             <input type="text" readonly="" class="form-control">
                         </div>
                         <div class="card-footer">
-                            <a href="../Checkout/checkout.jsp" class="btn btn-info btn-block">Realizar Pago</a>
+                            <a href="checkout.jsp" class="btn btn-info btn-block">Realizar Pago</a>
                             <a href="" class="btn btn-danger btn-block">Generar Compra</a>
                         </div>
                     </div>
