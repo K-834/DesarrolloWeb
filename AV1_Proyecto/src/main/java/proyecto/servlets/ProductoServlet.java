@@ -12,10 +12,6 @@ import javax.servlet.http.HttpSession;
 import proyecto.entidades.Producto;
 import proyecto.model.ProductoMemoryData;
 
-/**
- *
- * @author aferz
- */
 @WebServlet(name = "ProductoServlet", urlPatterns = {"/ProductoServlet"})
 public class ProductoServlet extends HttpServlet {
     
