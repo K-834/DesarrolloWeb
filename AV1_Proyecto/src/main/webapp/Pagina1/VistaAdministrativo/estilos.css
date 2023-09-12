@@ -684,3 +684,13 @@ th:nth-child(8) {/*estado*/
         flex-wrap: wrap;
     }
 }
+
+.tamañoImagenHome{
+    width: 100px;
+    height: 100px;
+}
+
+
+Ajuste-Home{
+    display: flex;
+}
