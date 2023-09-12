@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link href="index.css" rel="stylesheet" type="text/css"/>
+        <script src="https://unpkg.com/scrollreveal"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-white">
@@ -40,14 +41,15 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="../Login.jsp" style="color: darkblue;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" style="color: darkblue;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Iniciar Session
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="../Login/Login.jsp">Iniciar </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+   
+                            <a class="dropdown-item" href="../Registro/Registro.jsp">Registrar</a>
+                           
                         </div>
                     </li>
                 </ul>
@@ -78,13 +80,13 @@
         <br>
 
             
-        <main>
+        <main class="scroll">
 		<section>
 			<h2>Perfume A</h2>
                         <a href="perfumeA.html"><img class="imagenes" src="../Productos/Img/perfume1.jpg" alt="Imagen del perfume A"></a>
 			<p>Descripción del perfume A.</p>
 			<p>Precio: $100</p>
-			<a href="perfumeA.html" class="button">Ver detalles</a>
+                        <a href="../Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
 		</section>
 
 		<section>
@@ -92,7 +94,7 @@
 			<a href="perfumeB.html"><img class="imagenes" src="../Productos/Img/perfume1.jpg" alt="Imagen del perfume B"></a>
 			<p>Descripción del perfume B.</p>
 			<p>Precio: $150</p>
-			<a href="perfumeB.html" class="button">Ver detalles</a>
+			<a href="../Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
 		</section>
 
 		<section>
@@ -100,7 +102,7 @@
 			<a href="perfumeC.html"><img class="imagenes" src="../Productos/Img/perfume1.jpg" alt="Imagen del perfume C"></a>
 			<p>Descripción del perfume C.</p>
 			<p>Precio: $125</p>
-			<a href="perfumeC.html" class="button">Ver detalles</a>
+			<a href="../Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
 		</section>
 
 		<section>
@@ -108,7 +110,7 @@
 			<a href="perfumeD.html"><img class="imagenes" src="../Productos/Img/perfume1.jpg" alt="Imagen del perfume D"></a>
 			<p>Descripción del perfume D.</p>
 			<p>Precio: $100</p>
-			<a href="perfumeD.html" class="button">Ver detalles</a>
+			<a href="../Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
 		</section>
 
 		<section>
@@ -116,7 +118,7 @@
 			<a href="perfumeE.html"><img class="imagenes" src="../Productos/Img/perfume1.jpg" alt="Imagen del perfume E"></a>
 			<p>Descripción del perfume E.</p>
 			<p>Precio: $100</p>
-			<a href="perfumeE.html" class="button">Ver detalles</a>
+			<a href="../Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
 		</section>
 
 		<section>
@@ -124,7 +126,7 @@
 			<a href="perfumeF.html"><img class="imagenes" src="../Productos/Img/perfume1.jpg" alt="Imagen del perfume F"></a>
 			<p>Descripción del perfume F.</p>
 			<p>Precio: $100</p>
-			<a href="perfumeF.html" class="button">Ver detalles</a>
+			<a href="../Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
 		</section>
 	</main>
 
@@ -132,5 +134,6 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="scrolll.js"></script>
     </body>
 </html>

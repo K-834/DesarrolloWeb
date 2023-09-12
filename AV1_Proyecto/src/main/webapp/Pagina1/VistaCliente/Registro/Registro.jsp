@@ -41,7 +41,7 @@
                     </div>
                 <div class="Juntar">
                     <input class="Iniciar" type="submit" value="Registrarme">
-                    <a href="../Pagina Inicio.php" class="cancel-button">Cancelar</a>
+                    <a href="../Home/index.jsp" class="cancel-button">Cancelar</a>
 
                 </div>
             </form>
