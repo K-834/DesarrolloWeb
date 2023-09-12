@@ -30,22 +30,6 @@ public class CarritoServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CarritoServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CarritoServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -93,8 +77,8 @@ public class CarritoServlet extends HttpServlet {
 
             carrito.agregarProducto(producto, cantidad);
 
-            //pagina de confirmación
-            response.sendRedirect("pagina_de_confirmacion.jsp");
+            //pagina de confirmación solo quiero ver si pinta info
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaCliente/.jsp");
         }
 
     }
