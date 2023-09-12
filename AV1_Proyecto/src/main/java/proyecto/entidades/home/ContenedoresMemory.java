@@ -17,9 +17,9 @@ public class ContenedoresMemory {
 
 
     public ContenedoresMemory() {
-        lista.add(new Contenedores("Productos", "https://static.vecteezy.com/system/resources/previews/003/237/381/non_2x/line-icon-for-product-vector.jpg", "Mantenimiento de Productos"));
-        lista.add(new Contenedores("Pedidos", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaEtlQRBwEKuwxCqHMnxyeWqQjQNjTPE_Sr9Aw6PWfYl7Fok5nWaXRFkw_g7shbWsSflg&usqp=CAU", "Mantenimiento de Pedido"));
-        lista.add(new Contenedores("Comentario", "https://img.freepik.com/vector-premium/icono-comentario_9385-5.jpg?w=2000", "Gestion de comentarios"));
+        lista.add(new Contenedores("Productos", "https://static.vecteezy.com/system/resources/previews/003/237/381/non_2x/line-icon-for-product-vector.jpg", "../../../UsuarioServlet"));
+        lista.add(new Contenedores("Pedidos", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaEtlQRBwEKuwxCqHMnxyeWqQjQNjTPE_Sr9Aw6PWfYl7Fok5nWaXRFkw_g7shbWsSflg&usqp=CAU", "../../../ProductoServlet"));
+        lista.add(new Contenedores("Comentario", "https://img.freepik.com/vector-premium/icono-comentario_9385-5.jpg?w=2000", "/AV1_Proyecto/Pagina1/VistaAdministrativo/Pedidos/GestionPedidos.jsp"));
  
     }
 
