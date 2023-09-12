@@ -83,13 +83,11 @@
         }
 
         echo '</div>';
-
         echo '<center>';
         
         echo '<h3 class="tituloAA">Juguete</h3>';
         echo '</center>';
         echo '<div class="juguetes">';
-    
         foreach ($resultados as $producto) {
 
             if ($producto['tipo'] == "Juguete") {
@@ -109,13 +107,10 @@
             }
         }
         echo '</div>';
-
-
     } else {
         echo "No hay productos disponibles.";
     }
     mysqli_close($conexion);
 
-    
 ?>
 

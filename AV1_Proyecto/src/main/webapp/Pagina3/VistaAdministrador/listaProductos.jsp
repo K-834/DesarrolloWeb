@@ -14,20 +14,18 @@
     List<Producto> lista = new ArrayList<Producto>();
     int cont = 0;
     String valorBuscado = request.getParameter("txt-buscar");
-    if(valorBuscado != null) {
-        if(!valorBuscado.isEmpty()){
-            lista = ((List<Producto>)request.getSession().getAttribute("listaProductos")).stream()
-                .filter(producto -> producto.getModelo().equals(valorBuscado))
-                .collect(Collectors.toList());
+    if (valorBuscado != null) {
+        if (!valorBuscado.isEmpty()) {
+            lista = ((List<Producto>) request.getSession().getAttribute("listaProductos")).stream()
+                    .filter(producto -> producto.getModelo().equals(valorBuscado))
+                    .collect(Collectors.toList());
+        } else {
+            lista = (List<Producto>) request.getSession().getAttribute("listaProductos");
         }
-        else {
-            lista = (List<Producto>)request.getSession().getAttribute("listaProductos");
-        }
+    } else {
+        lista = (List<Producto>) request.getSession().getAttribute("listaProductos");
     }
-    else{
-        lista = (List<Producto>)request.getSession().getAttribute("listaProductos");
-    }
-    
+
 %>
 <!DOCTYPE html>
 <html>
@@ -70,54 +68,54 @@
                         </tr>
                     </thead>
                     <tbody id="table-body">
-                        <% for(Producto producto: lista){ %>
-                        <% cont++; %>
-                            <tr class="producto" id="<%=producto.getCodigo()%>">
-                                <th scope="row"><%=cont%></th>
-                                <td><%=producto.getCodigo()%></td>
-                                <td class="producto-row-nombre"><%=producto.getNombre()%></td>
-                                <td><%=producto.getMarca()%></td>
-                                <td><%=producto.getModelo()%></td>
-                                <td><%=String.format("%.2f", producto.getPrecio())%></td>
-                                <td>
+                        <% for (Producto producto : lista) { %>
+                        <% cont++;%>
+                        <tr class="producto" id="<%=producto.getCodigo()%>">
+                            <th scope="row"><%=cont%></th>
+                            <td><%=producto.getCodigo()%></td>
+                            <td class="producto-row-nombre"><%=producto.getNombre()%></td>
+                            <td><%=producto.getMarca()%></td>
+                            <td><%=producto.getModelo()%></td>
+                            <td><%=String.format("%.2f", producto.getPrecio())%></td>
+                            <td>
+                                <form action="../../ProductoServlet" method="POST">
+                                    <input type="hidden" name="accion" id="accion" value="ver" />
+                                    <input type="hidden" name="producto-codigo" id="producto-codigo" value="<%=producto.getCodigo()%>" />
+                                    <button type="submit" class="btn btn-success">Editar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<%=producto.getCodigo()%>">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+
+                        <!-- Modal -->
+                    <div class="modal fade" id="exampleModal<%=producto.getCodigo()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Advertencia: Está opción no podrá deshacerse!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ¿Seguro que deseas eliminar el producto <%=producto.getNombre()%>?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                     <form action="../../ProductoServlet" method="POST">
-                                        <input type="hidden" name="accion" id="accion" value="ver" />
+                                        <input type="hidden" name="accion" id="accion" value="eliminar" />
                                         <input type="hidden" name="producto-codigo" id="producto-codigo" value="<%=producto.getCodigo()%>" />
-                                        <button type="submit" class="btn btn-success">Editar</button>
-                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<%=producto.getCodigo()%>">Eliminar</button>
+                                        <button type="submit" class="btn btn-danger">Eliminar Producto</button>
                                     </form>
-                                </td>
-                            </tr>
-                            
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal<%=producto.getCodigo()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Advertencia: Está opción no podrá deshacerse!</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            ¿Seguro que deseas eliminar el producto <%=producto.getNombre()%>?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                            <form action="../../ProductoServlet" method="POST">
-                                                <input type="hidden" name="accion" id="accion" value="eliminar" />
-                                                <input type="hidden" name="producto-codigo" id="producto-codigo" value="<%=producto.getCodigo()%>" />
-                                                <button type="submit" class="btn btn-danger">Eliminar Producto</button>
-                                            </form>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                            
-                        <% } %>
+                        </div>
+                    </div>
+
+                    <% }%>
                     </tbody>
                 </table>
             </div>
         </main>
-        
+
         <!-- JS BOOTSTRAP -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="script.js"></script>
