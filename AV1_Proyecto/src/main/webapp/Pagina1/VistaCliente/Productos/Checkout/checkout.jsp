@@ -54,7 +54,7 @@
                         <a class="nav-link" href="../../Home/index.jsp" style="color: red;" >Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"style="color: black;">Ofertas del Dia </a>
+                        <a class="nav-link" href="#" style="color: black;">Ofertas del Dia </a>
                     </li>
 
                     <li class="nav-item">
