@@ -13,9 +13,9 @@ public class ProductoMemoryData {
     private static List<Producto> lista = new ArrayList<Producto>();
     
     public ProductoMemoryData() {
-        lista.add(new Producto("097705", "Camara Web Lifecam", "MICROSOFT", "Cinema H5D-00013", 279));
-        lista.add(new Producto("789789", "Camara IA", "OPENAI", "GPT", 150));
-        lista.add(new Producto("123456", "Microfono Dinamico", "AKG", "m414", 500));
+        lista.add(new Producto("097705", "White Diamonds", "Elizabeth Taylor", "Dama 100ml", 279));
+        lista.add(new Producto("789789", "WEST Side", "Bond 9", "Dama 100ml", 150));
+        lista.add(new Producto("123456", "WED Vibes Peaches", "Air&Water", "Unisex 240ml", 500));
     }
     
     public List<Producto> obtenerLista() {
