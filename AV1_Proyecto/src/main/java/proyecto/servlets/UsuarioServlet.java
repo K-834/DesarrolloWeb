@@ -34,7 +34,39 @@ public class UsuarioServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String accion = request.getParameter("accion");
+        if(accion.equals("agregar")){
+            
+            String codigo = request.getParameter("usuario-codigo");
+            String tipo = request.getParameter("usuario-tipo");
+            String nombre = request.getParameter("usuario-nombre");
+            String correo = request.getParameter("usuario-correo");
+            String contrasena = request.getParameter("usuario-contrasena");
+            
+            usuarioData.agregar(new Usuario(codigo, tipo, nombre, correo, contrasena));
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/listaUsuarios.jsp");
+        }
+        else if(accion.equals("ver")) {
+            Usuario usuario = usuarioData.obtener(request.getParameter("usuario-codigo"));
+            HttpSession misesion = request.getSession();
+            misesion.setAttribute("usuario", usuario);
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/usuarioEditar.jsp");
+        }
+        else if(accion.equals("editar")) {
+            
+            String codigo = request.getParameter("usuario-codigo");
+            String tipo = request.getParameter("usuario-tipo");
+            String nombre = request.getParameter("usuario-nombre");
+            String correo = request.getParameter("usuario-correo");
+            String contrasena = request.getParameter("usuario-contrasena");
+            
+            usuarioData.modificar(new Usuario(codigo, tipo, nombre, correo, contrasena));
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/listaUsuarios.jsp");
+        }
+        else if(accion.equals("eliminar")){
+            usuarioData.eliminar(request.getParameter("usuario-codigo"));
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/listaUsuarios.jsp");
+        }
     }
 
     @Override
