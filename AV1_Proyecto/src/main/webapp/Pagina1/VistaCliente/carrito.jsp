@@ -40,7 +40,7 @@
                 </form>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: darkblue">Carrito </a>
+                        <a class="nav-link" href="carrijo.jsp" style="color: darkblue">Carrito </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -118,7 +118,7 @@
                         </div>
                         <div class="card-footer">
                             <a href="checkout.jsp" class="btn btn-info btn-block">Realizar Pago</a>
-                            <a href="" class="btn btn-danger btn-block">Generar Compra</a>
+                            <a href="AV1_Proyecto/Pagina1/VistaCliente/checkout.jsp" class="btn btn-danger btn-block">Generar Compra</a>
                         </div>
                     </div>
                 </div>

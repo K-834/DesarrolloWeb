@@ -49,8 +49,8 @@ public class ContenedoresServlet extends HttpServlet {
         List<Contenedores> contenido = memoryCont.obtenerLista();
         //request.getSession().setAttribute("lista.Clientes", listaClientes);
         request.setAttribute("contenido", contenido);
-        request.getRequestDispatcher("Pagina1/VistaAdministrativo/Home/Home_1.jsp")
-                .forward(request, response);
+        request.getRequestDispatcher("Pagina1/VistaAdministrativo/Home/Home.jsp")
+                .forward(request, response);    
     }
 
     /**
