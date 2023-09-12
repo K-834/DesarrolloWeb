@@ -1,22 +1,17 @@
-<%-- 
-    Document   : home
-    Created on : 11 set. 2023, 00:09:37
-    Author     : antho
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-     <head>
+    <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="estiloIndex.css" rel="stylesheet" type="text/css"/>
+        <link href="index.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-            <a class="navbar-brand" href="#"> <img src="logos.png">  </a>
+            <a class="navbar-brand" href="#"> <img src="logo.png">  </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,12 +35,12 @@
                 </form>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: darkblue">Carrito </a>
+                        <a class="nav-link" href="carrito.jsp" style="color: darkblue">Carrito </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" style="color: darkblue;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="login.jsp" style="color: darkblue;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Iniciar Session
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -62,13 +57,13 @@
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="b3.png" alt="First slide">
+                    <img class="d-block w-100" src="bn.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="bn2.png" alt="Second slide">
+                    <img class="d-block w-100" src="bn21.png" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="parlantes.png" alt="Third slide">
+                    <img class="d-block w-100" src="bn3.png" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -81,35 +76,57 @@
             </a>
         </div>
         <br>
-        <div style="background-color: aliceblue">
-            <div class="text-center" style="color: darkblue; font-style:italic">
-                <h1>Ofertas del dia</h1>
-            </div>
-            <br>  
-            <div class="container mt-2">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-header text-center" style="background-color: darkblue;color: white; font-style: italic;">
-                                <h5>Nombre Producto</h5>
-                            </div>
-                            <div class="card-body">
-                                <i>$.100.00</i>
-                                <img src="" width="200" height="180">
-                            </div>
-                            <div class="card-footer text-center">
-                                <label>Descripcion del producto</label>
-                                <div>
-                                    <a href="" class="btn btn-danger">Comprar</a>
-                                    <a href=""  class="btn btn-outline-info">Agregar Carrito</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>  
+            
+        <main>
+		<section>
+			<h2>Perfume A</h2>
+			<a href="perfumeA.html"><img class="imagenes" src="perfume1.jpg" alt="Imagen del perfume A"></a>
+			<p>Descripción del perfume A.</p>
+			<p>Precio: $100</p>
+			<a href="perfumeA.html" class="button">Ver detalles</a>
+		</section>
+
+		<section>
+			<h2>Perfume B</h2>
+			<a href="perfumeB.html"><img class="imagenes" src="perfume1.jpg" alt="Imagen del perfume B"></a>
+			<p>Descripción del perfume B.</p>
+			<p>Precio: $150</p>
+			<a href="perfumeB.html" class="button">Ver detalles</a>
+		</section>
+
+		<section>
+			<h2>Perfume C</h2>
+			<a href="perfumeC.html"><img class="imagenes" src="perfume1.jpg" alt="Imagen del perfume C"></a>
+			<p>Descripción del perfume C.</p>
+			<p>Precio: $125</p>
+			<a href="perfumeC.html" class="button">Ver detalles</a>
+		</section>
+
+		<section>
+			<h2>Perfume D</h2>
+			<a href="perfumeD.html"><img class="imagenes" src="perfume1.jpg" alt="Imagen del perfume D"></a>
+			<p>Descripción del perfume D.</p>
+			<p>Precio: $100</p>
+			<a href="perfumeD.html" class="button">Ver detalles</a>
+		</section>
+
+		<section>
+			<h2>Perfume E</h2>
+			<a href="perfumeE.html"><img class="imagenes" src="perfume1.jpg" alt="Imagen del perfume E"></a>
+			<p>Descripción del perfume E.</p>
+			<p>Precio: $100</p>
+			<a href="perfumeE.html" class="button">Ver detalles</a>
+		</section>
+
+		<section>
+			<h2>Perfume F</h2>
+			<a href="perfumeF.html"><img class="imagenes" src="perfume1.jpg" alt="Imagen del perfume F"></a>
+			<p>Descripción del perfume F.</p>
+			<p>Precio: $100</p>
+			<a href="perfumeF.html" class="button">Ver detalles</a>
+		</section>
+	</main>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
