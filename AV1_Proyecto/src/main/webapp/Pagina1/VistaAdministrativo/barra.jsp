@@ -2,7 +2,7 @@
 <a href="#">
     <div class="fa-solid fa-user tmn"> - Perfil</div>
 </a>
-<a href="#">
+<a href="../../../ProductoServlet">
     <div class="fa-solid fa-box tmn"> - Productos</div>
 </a>
 <a href="#">

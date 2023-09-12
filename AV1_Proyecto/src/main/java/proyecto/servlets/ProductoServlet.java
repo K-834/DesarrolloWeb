@@ -32,7 +32,7 @@ public class ProductoServlet extends HttpServlet {
         List<Producto> listaProductos = productoData.obtenerLista();
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaProductos", listaProductos);
-        response.sendRedirect("/AV1_Proyecto/Pagina3/VistaAdministrador/listaProductos.jsp");
+        response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
     }
 
     @Override
@@ -48,13 +48,13 @@ public class ProductoServlet extends HttpServlet {
             double precio = Double.parseDouble(request.getParameter("producto-precio"));
             
             productoData.agregar(new Producto(codigo, nombre, marca, modelo, precio));
-            response.sendRedirect("/AV1_Proyecto/Pagina3/VistaAdministrador/listaProductos.jsp");
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
         }
         else if(accion.equals("ver")) {
             Producto producto = productoData.obtener(request.getParameter("producto-codigo"));
             HttpSession misesion = request.getSession();
             misesion.setAttribute("producto", producto);
-            response.sendRedirect("/AV1_Proyecto/Pagina3/VistaAdministrador/productoEditar.jsp");
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/productoEditar.jsp");
         }
         else if(accion.equals("editar")) {
             
@@ -65,11 +65,11 @@ public class ProductoServlet extends HttpServlet {
             double precio = Double.parseDouble(request.getParameter("producto-precio"));
             
             productoData.modificar(new Producto(codigo, nombre, marca, modelo, precio));
-            response.sendRedirect("/AV1_Proyecto/Pagina3/VistaAdministrador/listaProductos.jsp");
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
         }
         else if(accion.equals("eliminar")){
             productoData.eliminar(request.getParameter("producto-codigo"));
-            response.sendRedirect("/AV1_Proyecto/Pagina3/VistaAdministrador/listaProductos.jsp");
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
         }
     }
 
