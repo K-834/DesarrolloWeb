@@ -1,0 +1,15 @@
+
+.home-contenedor {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.home-contenedor a{
+    font-size: 1.3rem;
+    padding: 1em 1em;
+    border-radius: 25px;
+    background-color: #71b7e6;
+    color: #232323;
+    box-shadow: 0 5px 10px #888888;
+}

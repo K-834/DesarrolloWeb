@@ -29,6 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" style="color: black;">Contactos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="/AV1_Proyecto/Pagina1/VistaAdministrativo/Home/Home.jsp" style="color: black; font-weight: bold;">ADMINISTRACIÓN</a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -40,7 +43,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav">
+                    
                     <li class="nav-item dropdown">
+                        
                         <a class="nav-link dropdown-toggle" href="#" style="color: darkblue;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Iniciar Session
                         </a>

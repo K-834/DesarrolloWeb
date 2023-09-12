@@ -1,0 +1,58 @@
+.titulo {
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 0.5em;
+}
+
+.ux-agregar-buscar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-buscador {
+    display: flex;
+    width: 100%;
+}
+
+.form-buscador button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-buscador input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.reparacion {
+  margin: 0;
+  background-color: rgb(247, 247, 247);
+  display: flex;
+
+
+}
+
+#barra {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+
+}
+
+#barra {
+  background-color: rgb(146, 154, 171);
+  min-height: 100vh;
+  row-gap: 6vh;
+  min-width: 40px;
+  padding: 4vh;
+}
+
+#barra a {
+    color: #232323;
+}
