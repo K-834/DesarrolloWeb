@@ -74,7 +74,7 @@
                     <!-- <input   class="Iniciar" type="submit" value="Iniciar Sesion"  > -->
 
 
-                    <a href="../Home/index.jsp " class="cancel-button">Cancelar</a>
+                    <a href="../../../CarritoServlet " class="cancel-button">Cancelar</a>
 
                 </div>
             </form>

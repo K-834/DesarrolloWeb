@@ -41,7 +41,7 @@
                 </form>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/AV1_Proyecto/Pagina1/VistaCliente/carrito.jsp" style="color: darkblue">Carrito </a>
+                        <a class="nav-link" href="/AV1_Proyecto/Pagina1/VistaCliente/Productos/Carrito/carrito.jsp" style="color: darkblue">Carrito </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -52,10 +52,10 @@
                             Iniciar Session
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../Login/Login.jsp">Iniciar </a>
+                            <a class="dropdown-item" href="/AV1_Proyecto/Pagina1/VistaCliente/Login/Login.jsp">Iniciar </a>
                             <div class="dropdown-divider"></div>
 
-                            <a class="dropdown-item" href="../Registro/Registro.jsp">Registrar</a>
+                            <a class="dropdown-item" href="/AV1_Proyecto/Pagina1/VistaCliente/Registro/Registro.jsp">Registrar</a>
 
                         </div>
                     </li>
@@ -101,13 +101,14 @@
                 <p><%= producto.getDescripcion()%></p>
                 <p>Precio: $<%= producto.getPrecio()%></p>
                 <div class="d-flex mr-auto">
-                    <a href="productoDetalles.jsp?productId=<%= producto.getId()%>" class="button">Ver detalles</a>
+                    <a href="/AV1_Proyecto/Pagina1/VistaCliente/Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
                     <a href="CarritoServlet?productId=<%= producto.getId()%>" class="button">Agregar al carrito</a>
                 </div>
             </section>
 
             <%
                 }
+/*<a href="productoDetalles.jsp?productId= producto.getId()" class="button">Ver detalles</a>*/
             %>
         </main>
 

@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../../Home/index.jsp" style="color: red;" >Inicio<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../../../../CarritoServlet" style="color: red;" >Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"style="color: black;">Ofertas del Dia </a>
@@ -67,7 +67,7 @@
         <div class="contenedorb">
             <img src="../Img/perfume1.jpg" alt="imagend de camara">
             <div class="informacionb">
-                <p class="marcab">MICROSOFT</p>
+                <p class="marcab">ESIKA</p>
                 <p class="descripcionb">Fragancia vibranza de ESIKA</p>
                 <p class="codigob">CODIGO 097805</p>
                 <p class="preciob">S/ 279.00</p>
