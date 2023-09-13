@@ -15,6 +15,6 @@
     <div class="fa-solid fa-message tmn"> - Comentario</div>
 </a>
 
-<a href="/AV1_Proyecto/Pagina1/VistaCliente/Home/">
+<a href="../../../CarritoServlet">
     <div class="fa-solid fa-arrow-right-from-bracket tmn" onclick="return advertenciaSalida()"> - Salida</div>
 </a>
