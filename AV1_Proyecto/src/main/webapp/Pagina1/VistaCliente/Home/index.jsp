@@ -102,7 +102,8 @@
                 <p>Precio: $<%= producto.getPrecio()%></p>
                 <div class="d-flex mr-auto">
                     <a href="/AV1_Proyecto/Pagina1/VistaCliente/Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
-                    <a href="CarritoServlet?productId=<%= producto.getId()%>" class="button">Agregar al carrito</a>
+                    <a href="#" onclick="agregarAlCarrito('<%= producto.getId() %>')">Agregar al carrito</a>
+
                 </div>
             </section>
 
