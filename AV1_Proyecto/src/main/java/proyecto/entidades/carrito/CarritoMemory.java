@@ -4,9 +4,6 @@
  */
 package proyecto.entidades.carrito;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author antho
@@ -14,27 +11,31 @@ import java.util.List;
 public class CarritoMemory {
 
     private Producto producto;
-    private int cantidad;
+    private int cantidadComprada = 1;
 
     public CarritoMemory(Producto producto, int cantidad) {
         this.producto = producto;
-        this.cantidad = cantidad;
+        this.cantidadComprada = cantidadComprada;
     }
 
     public Producto getProducto() {
         return producto;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
+    }   
 
     public void aumentarCantidad(int cantidad) {
-        this.cantidad += cantidad;
+        this.cantidadComprada += cantidad;
     }
 
     public double calcularSubtotal() {
-        return producto.getPrecio() * cantidad;
+        return producto.getPrecio() * cantidadComprada;
+    }
+
+    public int getCantidadComprada() {
+        return cantidadComprada;
+    }
+
+    public void setCantidadComprada(int cantidadComprada) {
+        this.cantidadComprada = cantidadComprada;
     }
 
 }
