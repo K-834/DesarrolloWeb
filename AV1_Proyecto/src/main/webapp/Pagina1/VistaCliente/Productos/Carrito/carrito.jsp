@@ -4,11 +4,6 @@
     Author     : andre
 --%>
 
-<%@page import="proyecto.entidades.carrito.CarritoMemory"%>
-<%@page import="proyecto.entidades.carrito.CarritoMemory"%>
-<%@page import="java.util.List"%>
-<%@page import="proyecto.entidades.carrito.Carrito"%>
-<%@page import="proyecto.entidades.carrito.Carrito"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -45,7 +40,7 @@
                 </form>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../carrito.jsp" style="color: darkblue">Carrito </a>
+                        <a class="nav-link" href="../Carrito/carrito.jsp" style="color: darkblue">Carrito </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -78,24 +73,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                                Carrito carrito = (Carrito) request.getSession().getAttribute("carrito");
-                                if (carrito != null) {
-                                    List<CarritoMemory> lineasCarrito = carrito.obtenerLineasCarrito();
-                                    for (CarritoMemory linea : lineasCarrito) {
-                            %>
                             <tr>
-                                <td><%= linea.getProducto().getId()%></td>
-                                <td><%= linea.getProducto().getNombre()%></td>
-                                <td><%= linea.getProducto().getDescripcion()%></td>
-                                <td><%= linea.getProducto().getPrecio()%></td>
-                                <td><%= linea.getCantidadComprada()%></td>
-                                <td> <button type="button" class="btn btn-danger" data-bs-dismiss="modal">X</button> </td>
+                                <td>1</td>
+                                <td>hola</td>
+                                <td>dsfdds</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                
                             </tr>
-                            <%
-                                    }
-                                }
-                            %>
+                            <tr>
+                                <td>1</td>
+                                <td>hola</td>
+                                <td>dsfdds</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>hola</td>
+                                <td>dsfdds</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                
+                            </tr>
                         </tbody>
                     </table>
                 </div>

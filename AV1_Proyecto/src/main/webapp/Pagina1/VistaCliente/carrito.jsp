@@ -4,9 +4,6 @@
     Author     : andre
 --%>
 
-<%@page import="proyecto.entidades.carrito.CarritoMemory"%>
-<%@page import="java.util.List"%>
-<%@page import="proyecto.entidades.carrito.Carrito"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -63,8 +60,6 @@
         </nav> 
         <div class="container mt-4">
             <div class="row">
-                <!-- ... Tu código HTML anterior ... -->
-
                 <div class="col-sm-8">
                     <table class="table table-hover">
                         <thead>
@@ -78,24 +73,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <%
-                                Carrito carrito = (Carrito) request.getSession().getAttribute("carrito");
-                                if (carrito != null) {
-                                    List<CarritoMemory> lineasCarrito = carrito.obtenerLineasCarrito();
-                                    for (CarritoMemory linea : lineasCarrito) {
-                            %>
                             <tr>
-                                <td><%= linea.getProducto().getId()%></td>
-                                <td><%= linea.getProducto().getNombre()%></td>
-                                <td><%= linea.getProducto().getDescripcion()%></td>
-                                <td><%= linea.getProducto().getPrecio()%></td>
-                                <td><%= linea.getCantidadComprada()%></td>
-                                <td> <!-- Aquí puedes agregar cualquier acción que necesites --> </td>
+                                <td>1</td>
+                                <td>hola</td>
+                                <td>dsfdds</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                
                             </tr>
-                            <%
-                                    }
-                                }
-                            %>
+                            <tr>
+                                <td>1</td>
+                                <td>hola</td>
+                                <td>dsfdds</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>hola</td>
+                                <td>dsfdds</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>1</td>
+                                
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -120,7 +124,7 @@
                 </div>
             </div>
         </div>
-
+       
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -20,8 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "CarritoServlet", urlPatterns = {"/CarritoServlet"})
 public class CarritoServlet extends HttpServlet {
-
-    private CatalogoProductos memoryProd = new CatalogoProductos();
+        private CatalogoProductos memoryProd = new CatalogoProductos();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,6 +30,7 @@ public class CarritoServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -44,19 +43,8 @@ public class CarritoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        // Verifica si ya existe un carrito en la sesión
-        HttpSession session = request.getSession();
-        Carrito carrito = (Carrito) session.getAttribute("carrito");
-
-        if (carrito == null) {
-            // Si no existe, crea un nuevo carrito y configúralo en la sesión
-            carrito = new Carrito();
-            session.setAttribute("carrito", carrito);
-        }
-
-        // Resto del código para obtener el catálogo de productos y mostrar la página JSP
-        List<Producto> contenido = memoryProd.obtenerTodosLosProductos();
+       List<Producto> contenido = memoryProd.obtenerTodosLosProductos();
+        //request.getSession().setAttribute("lista.Clientes", listaClientes);
         request.setAttribute("contenido.catalogo", contenido);
         request.getRequestDispatcher("Pagina1/VistaCliente/Home/index.jsp")
                 .forward(request, response);
@@ -89,9 +77,10 @@ public class CarritoServlet extends HttpServlet {
 
             carrito.agregarProducto(producto, cantidad);
 
-            // Redireccionar de vuelta a la página de productos o mostrar un mensaje de éxito
-            response.sendRedirect("Pagina1/VistaCliente/Home/index.jsp");
+            //pagina de confirmación solo quiero ver si pinta info
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaCliente/.jsp");
         }
+
     }
 
     /**
