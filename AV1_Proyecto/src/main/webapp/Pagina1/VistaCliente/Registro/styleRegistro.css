@@ -30,8 +30,8 @@ body{
     position: relative;
     top: 0;
     left: 0;
-    width: 420px;
-    height: 420px;
+    width: 400px;
+    height: 450px;
     background: #f700ffbb;
     padding: 20px 50px 80px 80px;
     overflow: hidden;
@@ -80,7 +80,6 @@ body{
     inset: 2px;
     background: rgba(255, 255, 255, 1);
     
-    padding: 50px 40px;
     border-radius: 8px;
     z-index: 2;
     display: flex;
@@ -347,8 +346,8 @@ main{
 
 /*LINK*/
 .links a {
-    margin-left: 30px;
-    margin-top: 5px;
+    
+    margin: 10px 0 0 15px;
    
     font-size: 0.75em;
     color: #FF0000;
