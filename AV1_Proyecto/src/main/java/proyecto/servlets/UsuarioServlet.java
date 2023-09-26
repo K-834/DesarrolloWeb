@@ -43,14 +43,14 @@ public class UsuarioServlet extends HttpServlet {
             String correo = request.getParameter("usuario-correo");
             String contrasena = request.getParameter("usuario-contrasena");
             
-            usuarioData.agregar(new Usuario(codigo, tipo, nombre, correo, contrasena));
+            //usuarioData.agregar(new Usuario(codigo, tipo, nombre, correo, contrasena));
             response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/listaUsuarios.jsp");
         }
         else if(accion.equals("ver")) {
-            Usuario usuario = usuarioData.obtener(request.getParameter("usuario-codigo"));
+            /*Usuario usuario = usuarioData.obtener(request.getParameter("usuario-codigo"));
             HttpSession misesion = request.getSession();
             misesion.setAttribute("usuario", usuario);
-            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/usuarioEditar.jsp");
+            response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/usuarioEditar.jsp");*/
         }
         else if(accion.equals("editar")) {
             
@@ -60,11 +60,11 @@ public class UsuarioServlet extends HttpServlet {
             String correo = request.getParameter("usuario-correo");
             String contrasena = request.getParameter("usuario-contrasena");
             
-            usuarioData.modificar(new Usuario(codigo, tipo, nombre, correo, contrasena));
+            //usuarioData.modificar(new Usuario(codigo, tipo, nombre, correo, contrasena));
             response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/listaUsuarios.jsp");
         }
         else if(accion.equals("eliminar")){
-            usuarioData.eliminar(request.getParameter("usuario-codigo"));
+            //usuarioData.eliminar(request.getParameter("usuario-codigo"));
             response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Usuarios/listaUsuarios.jsp");
         }
     }

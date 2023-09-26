@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <h5 class="card-title"></h5>
                             <p class="card-text"></p>
-                            <a href="../../../UsuarioServlet" class="btn btn-primary">Gestión de usuarios</a>
+                            <a href="../../../UsuarioController" class="btn btn-primary">Gestión de usuarios</a>
                         </div>
                     </div>
                 </div>

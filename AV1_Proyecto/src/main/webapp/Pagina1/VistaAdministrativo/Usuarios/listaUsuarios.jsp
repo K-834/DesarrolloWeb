@@ -12,7 +12,7 @@
         <title>Lista Usuarios</title>
         <!-- CSS BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="usuariosEstilos.css">
+        <link rel="stylesheet" href="Pagina1/VistaAdministrativo/Usuarios/usuariosEstilos.css">
     </head>
     <body>
         <main class="reparacion">
@@ -25,7 +25,7 @@
                 <h1 class="mb-3 titulo">Lista de Usuarios</h1>
 
                 <div class="ux-agregar-buscar">
-                    <a href="usuarioAgregar.jsp" class="btn btn-primary mb-3">Agregar Usuario</a>
+                    <a href="Pagina1/VistaAdministrativo/Usuarios/usuarioAgregar.jsp" class="btn btn-primary mb-3">Agregar Usuario</a>
                     <button class="btn btn-secondary mb-3" data-limpiar="limpiar">Limpiar Filtro</button>
                     <div class="input-group mb-3">
                         <button type="submit" class="btn btn-outline-secondary" data-buscar="buscar">Buscar</button>
@@ -37,7 +37,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Codigo</th>
+                            <th scope="col">Id</th>
                             <th scope="col">Tipo</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Correo</th>
@@ -48,25 +48,25 @@
                     <tbody id="table-body">
                         <% for (Usuario usuario : lista) { %>
                         <% cont++;%>
-                        <tr class="usuario" id="<%=usuario.getCodigo()%>">
+                        <tr class="usuario" id="<%=usuario.getId()%>">
                             <th scope="row"><%=cont%></th>
-                            <td><%=usuario.getCodigo()%></td>
+                            <td><%=usuario.getId()%></td>
                             <td><%=usuario.getTipo()%></td>
                             <td class="usuario-row-nombre"><%=usuario.getNombre()%></td>
                             <td><%=usuario.getCorreo()%></td>
-                            <td><%=usuario.getContrasena()%></td>
+                            <td><%=usuario.getPassword()%></td>
                             <td>
-                                <form action="../../../UsuarioServlet" method="POST">
-                                    <input type="hidden" name="accion" id="accion" value="ver" />
-                                    <input type="hidden" name="usuario-codigo" id="usuario-codigo" value="<%=usuario.getCodigo()%>" />
+                                <form action="UsuarioController" method="POST">
+                                    <input type="hidden" name="accion" value="ver" />
+                                    <input type="hidden" name="usuario-id" value="<%=usuario.getId()%>" />
                                     <button type="submit" class="btn btn-success">Editar</button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<%=usuario.getCodigo()%>">Eliminar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<%=usuario.getId()%>">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal<%=usuario.getCodigo()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal<%=usuario.getId()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -80,7 +80,7 @@
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         <form action="../../../UsuarioServlet" method="POST">
                                             <input type="hidden" name="accion" id="accion" value="eliminar" />
-                                            <input type="hidden" name="usuario-codigo" id="usuario-codigo" value="<%=usuario.getCodigo()%>" />
+                                            <input type="hidden" name="usuario-id" id="usuario-id" value="<%=usuario.getId()%>" />
                                             <button type="submit" class="btn btn-danger">Eliminar Producto</button>
                                         </form>
                                     </div>
@@ -97,6 +97,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <% //PARA COLOCAR LOS ICONOS EN LA BARRA  %>
         <script src="https://kit.fontawesome.com/3c12835a10.js" crossorigin="anonymous"></script>
-        <script src="usuariosScript.js"></script>
+        <script src="Pagina1/VistaAdministrativo/Usuarios/usuariosScript.js"></script>
     </body>
 </html>

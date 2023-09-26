@@ -2,29 +2,29 @@ package proyecto.entidades;
 
 public class Usuario {
     
-    private String codigo;
+    private int id;
     private String tipo;
     private String nombre;
     private String correo;
-    private String contrasena;
+    private String password;
 
     public Usuario() {
     }
 
-    public Usuario(String codigo, String tipo, String nombre, String correo, String contrasena) {
-        this.codigo = codigo;
+    public Usuario(String tipo, String nombre, String correo, String password) {
+        this.id = 0;
         this.tipo = tipo;
         this.nombre = nombre;
         this.correo = correo;
-        this.contrasena = contrasena;
+        this.password = password;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTipo() {
@@ -51,12 +51,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setPassword(String password) {
+        this.password = password;
     }
     
     
