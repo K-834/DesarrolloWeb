@@ -30,7 +30,7 @@ body{
     position: relative;
     top: 0;
     left: 0;
-    width: 400px;
+    width: 420px;
     height: 450px;
     background: #f700ffbb;
     padding: 20px 50px 80px 80px;
@@ -353,6 +353,7 @@ main{
     font-size: 0.75em;
     color: #FF0000;
     text-decoration: beige;
+    position: absolute;
     
 }
 .links a:hover , .links a:nth-child(2) {
