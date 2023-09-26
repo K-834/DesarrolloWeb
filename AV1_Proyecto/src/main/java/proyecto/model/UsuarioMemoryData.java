@@ -9,18 +9,18 @@ public class UsuarioMemoryData {
     private static List<Usuario> lista = new ArrayList<Usuario>();
     
     public UsuarioMemoryData() {
-        lista.add(new Usuario("usu_001", "ADMIN", "Baltazar", "baltazar@gmail.com", "baltazar"));
-        lista.add(new Usuario("usu_002", "CLIENTE", "Melchor", "melchor@gmail.com", "melchor"));
-        lista.add(new Usuario("usu_003", "CLIENTE", "Gaspar", "gaspar@gmail.com", "gaspar"));
+//        lista.add(new Usuario("usu_001", "ADMIN", "Baltazar", "baltazar@gmail.com", "baltazar"));
+//        lista.add(new Usuario("usu_002", "CLIENTE", "Melchor", "melchor@gmail.com", "melchor"));
+//        lista.add(new Usuario("usu_003", "CLIENTE", "Gaspar", "gaspar@gmail.com", "gaspar"));
     }
     
     public List<Usuario> obtenerLista() {
         return UsuarioMemoryData.lista;
     }
-    
+    /*
     public Usuario obtener(String codigo) {
         for(Usuario u : lista){
-            if(u.getCodigo().equals(codigo)){
+            if(u.getId().equals(codigo)){
                 return u;
             }
         }
@@ -47,5 +47,5 @@ public class UsuarioMemoryData {
             }
         }
         return false;
-    }
+    }*/
 }

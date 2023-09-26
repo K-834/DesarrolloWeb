@@ -16,7 +16,7 @@
         <title>Editar Usuario</title>
         <!-- CSS BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="usuariosEstilos.css">
+        <link rel="stylesheet" href="Pagina1/VistaAdministrativo/Usuarios/usuariosEstilos.css">
     </head>
     <body>
         <main class="reparacion">
@@ -25,11 +25,11 @@
             </div>
             <div class="container">
                 <h1 class="mb-3 titulo">Editar Usuario</h1>
-                <form action="../../../UsuarioServlet" method="POST">
+                <form action="../../../UsuarioController" method="POST">
                     <input type="hidden" name="accion" id="accion" value="editar" />
                     <div class="mb-3">
-                        <label for="usuario-codigo" class="form-label">Codigo</label>
-                        <input type="text" class="form-control" id="usuario-codigo" name="usuario-codigo" value="<%=usuario.getCodigo()%>" readonly required>
+                        <label for="usuario-id" class="form-label">Id</label>
+                        <input type="text" class="form-control" id="usuario-id" name="usuario-id" value="<%=usuario.getId()%>" readonly required>
                     </div>
                     <div class="mb-3">
                         <label for="usuario-tipo" class="form-label">Tipo</label>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="usuario-contrasena" class="form-label">Constraseña</label>
-                        <input type="password" class="form-control" id="usuario-contrasena" name="usuario-contrasena" value="<%=usuario.getContrasena()%>" required>
+                        <input type="password" class="form-control" id="usuario-contrasena" name="usuario-contrasena" value="<%=usuario.getPassword()%>" required>
                     </div>
                     <button type="submit" class="btn btn-success">Actualizar Datos</button>
                     <a href="listaUsuarios.jsp" class="btn btn-secondary">Regresar</a>
