@@ -56,7 +56,7 @@
                             <td><%=usuario.getCorreo()%></td>
                             <td><%=usuario.getPassword()%></td>
                             <td>
-                                <form action="UsuarioController" method="POST">
+                                <form action="/AV1_Proyecto/UsuarioController" method="POST">
                                     <input type="hidden" name="accion" value="ver" />
                                     <input type="hidden" name="usuario-id" value="<%=usuario.getId()%>" />
                                     <button type="submit" class="btn btn-success">Editar</button>
@@ -74,14 +74,14 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ¿Seguro que deseas eliminar el producto <%=usuario.getNombre()%>?
+                                        ¿Seguro que deseas eliminar el usuario <%=usuario.getNombre()%>?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                        <form action="../../../UsuarioServlet" method="POST">
-                                            <input type="hidden" name="accion" id="accion" value="eliminar" />
+                                        <form action="/AV1_Proyecto/UsuarioController" method="POST">
+                                            <input type="hidden" name="accion" value="eliminar" />
                                             <input type="hidden" name="usuario-id" id="usuario-id" value="<%=usuario.getId()%>" />
-                                            <button type="submit" class="btn btn-danger">Eliminar Producto</button>
+                                            <button type="submit" class="btn btn-danger">Eliminar Usuario</button>
                                         </form>
                                     </div>
                                 </div>
