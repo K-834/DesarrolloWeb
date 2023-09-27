@@ -17,7 +17,7 @@
             </div>
             <div class="container">
                 <h1 class="mb-3 titulo">Agregar Usuario</h1>
-                <form action="../../../UsuarioController" method="POST">
+                <form action="/AV1_Proyecto/UsuarioController" method="POST">
                     <input type="hidden" name="accion" id="accion" value="agregar" />
                     <div class="mb-3">
                         <label for="usuario-tipo" class="form-label">Tipo</label>
@@ -39,7 +39,7 @@
                         <input type="password" class="form-control" id="usuario-contrasena" name="usuario-contrasena" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar Usuario</button>
-                    <a href="../../../UsuarioController" class="btn btn-secondary">Regresar</a>
+                    <a href="/AV1_Proyecto/UsuarioController" class="btn btn-secondary">Regresar</a>
                 </form>
             </div>
         </main>

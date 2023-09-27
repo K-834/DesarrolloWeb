@@ -88,6 +88,35 @@ public class UsuarioModel {
         }
     }
 
+    public boolean editarUsuario(int id, String nombre, String correo, String password) {
+        String sql = "UPDATE usuarios SET nombre = ?, correo = ?, password = ? WHERE id = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, nombre);
+            statement.setString(2, correo);
+            statement.setString(3, password);
+            statement.setInt(4, id);
+            return statement.executeUpdate() > 0;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean eliminarUsuario(int id) {
+        String sql = "DELETE FROM usuarios WHERE id = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            return statement.executeUpdate() > 0;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public Usuario login(String correo, String password) {
         Usuario usuario = new Usuario();
         String sql = "SELECT * FROM usuarios WHERE correo = ? AND password = ?";

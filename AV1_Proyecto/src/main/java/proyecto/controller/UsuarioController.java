@@ -27,20 +27,30 @@ public class UsuarioController extends HttpServlet {
 
         String accion = (String) request.getParameter("accion");
 
+        int id = (request.getParameter("usuario-id") != null) ? Integer.parseInt(request.getParameter("usuario-id")) : 0;
+        String tipo = request.getParameter("usuario-tipo");
+        String nombre = request.getParameter("usuario-nombre");
+        String correo = request.getParameter("usuario-correo");
+        String password = request.getParameter("usuario-contrasena");
+
         switch(accion){
             case "agregar":
-                String tipo = request.getParameter("usuario-tipo");
-                String nombre = request.getParameter("usuario-nombre");
-                String correo = request.getParameter("usuario-correo");
-                String password = request.getParameter("usuario-contrasena");
                 model.agregarUsuario(tipo, nombre, correo, password);
                 doGet(request,response);
                 break;
             case "ver":
-                Usuario usuario = model.obtenerUsuario(Integer.parseInt(request.getParameter("usuario-id")));
+                Usuario usuario = model.obtenerUsuario(id);
                 HttpSession misesion = request.getSession();
                 misesion.setAttribute("usuario", usuario);
                 request.getRequestDispatcher("Pagina1/VistaAdministrativo/Usuarios/usuarioEditar.jsp").forward(request,response);
+                break;
+            case "editar":
+                model.editarUsuario(id,nombre, correo, password);
+                doGet(request, response);
+                break;
+            case "eliminar":
+                model.eliminarUsuario(id);
+                doGet(request, response);
                 break;
         }
     }

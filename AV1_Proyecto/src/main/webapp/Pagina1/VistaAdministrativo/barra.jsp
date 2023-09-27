@@ -2,7 +2,7 @@
 <a href="/AV1_Proyecto/Pagina1/VistaAdministrativo/Home/Home.jsp">
     <div class="fa-solid fa-user tmn"> - Perfil</div>
 </a>
-<a href="../../../UsuarioController">
+<a href="/AV1_Proyecto/UsuarioController">
     <div class="fa-solid fa-user tmn"> - Usuarios</div>
 </a>
 <a href="../../../ProductoServlet">
