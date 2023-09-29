@@ -1,8 +1,8 @@
-package proyecto.model;
+package modelo.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import proyecto.entidades.Producto;
+import modelo.entidades.Producto;
 
 /**
  *

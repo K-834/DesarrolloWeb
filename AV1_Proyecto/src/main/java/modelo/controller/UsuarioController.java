@@ -1,7 +1,7 @@
-package proyecto.controller;
+package modelo.controller;
 
-import proyecto.entidades.Usuario;
-import proyecto.model.UsuarioModel;
+import modelo.entidades.Usuario;
+import modelo.model.UsuarioModel;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

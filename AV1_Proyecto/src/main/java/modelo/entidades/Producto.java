@@ -1,4 +1,4 @@
-package proyecto.entidades;
+package modelo.entidades;
 
 /**
  *

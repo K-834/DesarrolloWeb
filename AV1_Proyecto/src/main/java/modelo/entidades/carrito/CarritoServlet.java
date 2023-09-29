@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package proyecto.entidades.carrito;
+package modelo.entidades.carrito;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -57,7 +57,7 @@ public class CarritoServlet extends HttpServlet {
 
         // Resto del código para obtener el catálogo de productos y mostrar la página JSP
         List<Producto> contenido = memoryProd.obtenerTodosLosProductos();
-        request.setAttribute("contenido.catalogo", contenido);
+        request.setAttribute("catalogo", contenido);
         request.getRequestDispatcher("Pagina1/VistaCliente/Home/index.jsp")
                 .forward(request, response);
     }
@@ -87,7 +87,7 @@ public class CarritoServlet extends HttpServlet {
                 request.getSession().setAttribute("carrito", carrito);
             }
 
-            carrito.agregarProducto(producto, cantidad);
+//            carrito.agregarProducto(producto, cantidad);
 
             // Redireccionar de vuelta a la página de productos o mostrar un mensaje de éxito
             response.sendRedirect("Pagina1/VistaCliente/Home/index.jsp");

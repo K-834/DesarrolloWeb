@@ -2,6 +2,9 @@
 <%@page import="proyecto.entidades.carrito.Producto"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +28,7 @@
                         <a class="nav-link" href="#" style="color: red;" >Inicio<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"style="color: black;">Ofertas del Dia </a>
+                        <a class="nav-link" href="#" style="color: black;">Ofertas del Dia </a>
                     </li>
 
                     <li class="nav-item">
@@ -89,28 +92,26 @@
         <br>
 
         <main class="scroll">
-            <%
-                List<Producto> listaDeProductos = (List<Producto>) request.getAttribute("contenido.catalogo");
-                for (Producto producto : listaDeProductos) {
-            %>
-            <section>
-                <h2><%= producto.getNombre()%></h2>
-                <a href="productoDetalles.jsp?productId=<%= producto.getId()%>">
-                    <img class="imagenes" src="/AV1_Proyecto/Pagina1/VistaCliente/Productos/Img/perfume1.jpg" alt="Imagen del producto">
-                </a>
-                <p><%= producto.getDescripcion()%></p>
-                <p>Precio: $<%= producto.getPrecio()%></p>
-                <div class="d-flex mr-auto">
-                    <a href="/AV1_Proyecto/Pagina1/VistaCliente/Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
-                    <a href="#" onclick="agregarAlCarrito('<%= producto.getId() %>')">Agregar al carrito</a>
-
-                </div>
-            </section>
-
-            <%
-                }
-/*<a href="productoDetalles.jsp?productId= producto.getId()" class="button">Ver detalles</a>*/
-            %>
+            
+            <c:forEach items="${requestScope.catalogo}" var="producto">
+                <section>
+                    <h2>${producto.nombre}</h2>
+                    <a href="productoDetalles.jsp?productId=${producto.id}">
+                        <img class="imagenes" src="/AV1_Proyecto/Pagina1/VistaCliente/Productos/Img/perfume1.jpg" alt="Imagen del producto">
+                    </a>
+                    <p>${producto.descripcion}</p>
+                    <p>Precio: $${producto.precio}</p>
+                    
+                    <div class="d-flex mr-auto">
+                        
+                        <a href="/AV1_Proyecto/Pagina1/VistaCliente/Productos/DetallesProd/detalle.jsp" class="button">Ver detalles</a>
+                        <a href="#" onclick="agregarAlCarrito('${producto.id}')" class="button">Agregar al carrito</a>
+                        
+                    </div>
+                </section>
+            </c:forEach>
+            
+            
         </main>
 
 

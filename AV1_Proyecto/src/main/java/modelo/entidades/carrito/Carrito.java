@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyecto.entidades.carrito;
+package modelo.entidades.carrito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,21 +14,21 @@ import java.util.List;
 public class Carrito {
     private List<CarritoMemory> carrito = new ArrayList<>();
 
-    public void agregarProducto(Producto producto, int cantidad) {
-        for (CarritoMemory linea : carrito) {
-            if (linea.getProducto().getId().equals(producto.getId())) {
-                linea.aumentarCantidad(cantidad);
-                return;
-            }
-        }
-
-        CarritoMemory nuevaLinea = new CarritoMemory(producto, cantidad);
-        carrito.add(nuevaLinea);
-    }
-
-    public void eliminarProducto(String productId) {
-        carrito.removeIf(linea -> linea.getProducto().getId().equals(productId));
-    }
+//    public void agregarProducto(Producto producto, int cantidad) {
+//        for (CarritoMemory linea : carrito) {
+//            if (linea.getProducto().getId().equals(producto.getId())) {
+//                linea.aumentarCantidad(cantidad);
+//                return;
+//            }
+//        }
+//
+//        CarritoMemory nuevaLinea = new CarritoMemory(producto, cantidad);
+//        carrito.add(nuevaLinea);
+//    }
+//
+//    public void eliminarProducto(String productId) {
+//        carrito.removeIf(linea -> linea.getProducto().getId().equals(productId));
+//    }
 
     public List<CarritoMemory> obtenerLineasCarrito() {
         return carrito;

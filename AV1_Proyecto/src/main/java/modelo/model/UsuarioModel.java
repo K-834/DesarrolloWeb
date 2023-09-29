@@ -1,7 +1,7 @@
-package proyecto.model;
+package modelo.model;
 
-import proyecto.config.db;
-import proyecto.entidades.Usuario;
+import modelo.config.db;
+import modelo.entidades.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
