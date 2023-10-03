@@ -1,5 +1,6 @@
 package proyecto.controller;
 
+import proyecto.config.Encryptor;
 import proyecto.entidades.Usuario;
 import proyecto.model.UsuarioModel;
 
@@ -7,12 +8,14 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @WebServlet(name = "UsuarioController", value = "/UsuarioController")
 public class UsuarioController extends HttpServlet {
 
     UsuarioModel model = new UsuarioModel();
+    Encryptor encryptor = new Encryptor();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,15 +36,16 @@ public class UsuarioController extends HttpServlet {
         String correo = request.getParameter("usuario-correo");
         String password = request.getParameter("usuario-contrasena");
 
+        HttpSession misesion = request.getSession();
+
         switch(accion){
             case "agregar":
                 model.agregarUsuario(tipo, nombre, correo, password);
                 doGet(request,response);
                 break;
             case "ver":
-                Usuario usuario = model.obtenerUsuario(id);
-                HttpSession misesion = request.getSession();
-                misesion.setAttribute("usuario", usuario);
+                Usuario usuarioVer = model.obtenerUsuario(id);
+                misesion.setAttribute("usuario", usuarioVer);
                 request.getRequestDispatcher("Pagina1/VistaAdministrativo/Usuarios/usuarioEditar.jsp").forward(request,response);
                 break;
             case "editar":
@@ -51,6 +55,43 @@ public class UsuarioController extends HttpServlet {
             case "eliminar":
                 model.eliminarUsuario(id);
                 doGet(request, response);
+                break;
+            case "login":
+                try {
+                    String encryptPassLogin = encryptor.encryptString(password);
+
+                    if(encryptPassLogin.equals(model.obtenerHashedPass(correo))) {
+                        Usuario usuarioLogin = model.login(correo, encryptPassLogin);
+                        misesion.setAttribute("usuario", usuarioLogin);
+                        request.getRequestDispatcher("Pagina1/VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
+                    }
+                    else {
+                        request.getRequestDispatcher("Pagina1/VistaCliente/Login/Login.jsp").forward(request,response);
+                    }
+                }
+                catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            case "registro":
+                try {
+                    String encryptPassRegistro = encryptor.encryptString(password);
+
+                    if(model.agregarUsuario("CLIENTE", nombre, correo, encryptPassRegistro)) {
+                        Usuario usuarioRegistro = model.login(correo, encryptPassRegistro);
+                        misesion.setAttribute("usuario", usuarioRegistro);
+                        request.getRequestDispatcher("Pagina1/VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
+                    }
+                    else {
+                        request.getRequestDispatcher("Pagina1/VistaCliente/Registro/Registro.jsp").forward(request,response);
+                    }
+                }
+                catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
+
+
                 break;
         }
     }
