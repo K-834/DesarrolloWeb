@@ -138,4 +138,21 @@ public class UsuarioModel {
         }
         return usuario;
     }
+
+    public String obtenerHashedPass(String correo) {
+        String pass = "";
+        String sql = "SELECT * FROM usuarios WHERE correo = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, correo);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                pass = resultSet.getString("password");
+            }
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return pass;
+    }
 }

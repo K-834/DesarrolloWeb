@@ -26,16 +26,17 @@
 
     <main>
         <div class="box">
-            <form action=" " id="Formulario"><!--Formulario-->
+            <form action="/AV1_Proyecto/UsuarioController" method="POST" id="Formulario"><!--Formulario-->
+                <input type="hidden" name="accion" value="login" />
                 <h2>Iniciar Sesion</h2>
                 <div class="inputBox"> <!--Caja de texto-->
-                    <input type="text" required="required">
+                    <input type="email" name="usuario-correo" required="required">
                     <span>Email</span>
                     <i></i>
                 </div>
 
                 <div class="inputBox"><!--Caja de texto-->
-                    <input type="password" required="required">
+                    <input type="password" name="usuario-contrasena" required="required">
                     <span>Contraseña</span>
                     <i></i>
                 </div>
@@ -51,7 +52,7 @@
                     <!-- <button class="Iniciar" type="submit"><a href="../Pagina Inicio.php"></a> Iniciar Sesion</button> -->
 
 
-                    <a href=" " type="submit" class="Iniciar">Iniciar Sesion</a>
+                    <button type="submit" class="Iniciar">Iniciar Sesion</button>
 
                     <style>
                         .Iniciar {
