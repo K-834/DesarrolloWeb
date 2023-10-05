@@ -1,8 +1,8 @@
-package proyecto.controller;
+package controller;
 
-import proyecto.config.Encryptor;
-import proyecto.entidades.Usuario;
-import proyecto.model.UsuarioModel;
+import config.Encryptor;
+import entidades.Usuario;
+import modelo.UsuarioModel;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
