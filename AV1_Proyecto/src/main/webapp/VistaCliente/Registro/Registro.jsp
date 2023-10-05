@@ -18,21 +18,22 @@
 <body>
     <main>
         <div class="box">
-            <form action="../enviar_correo/envio.php " method="post"  id="Formulario"><!--Formulario-->
+            <form action="/AV1_Proyecto/UsuarioController" method="POST"  id="Formulario"><!--Formulario-->
+                <input type="hidden" name="accion" value="registro" />
                 <h2>Registro</h2>
                 <div class="inputBox"> <!--Caja de texto-->
-                    <input type="text" name="nombre" id="nombre" required="required">
+                    <input type="text" name="usuario-nombre" id="nombre" required="required">
                     <span>Nombres Completos</span>
                     <i></i>
                 </div>
 
                 <div class="inputBox"><!--Caja de texto-->
-                    <input type="email" name="correo" id="correo" required="required">
+                    <input type="email" name="usuario-correo" id="correo" required="required">
                     <span>Email</span>
                     <i></i>
                 </div>
                 <div class="inputBox"><!--Caja de texto-->
-                    <input type="password" name="contraseña" id="contraseña" required="required">
+                    <input type="password" name="usuario-contrasena" id="contraseña" required="required">
                     <span>Contraseña</span>
                     <i></i>
                 </div>
@@ -40,7 +41,7 @@
                     <a href="../Login/Login.jsp">Regresar al login</a>
                     </div>
                 <div class="Juntar">
-                    <input class="Iniciar" type="submit" value="Registrarme">
+                    <button class="Iniciar" type="submit">Registrarme</button>
                     <a href="../../../CarritoServlet" class="cancel-button">Cancelar</a>
 
                 </div>
