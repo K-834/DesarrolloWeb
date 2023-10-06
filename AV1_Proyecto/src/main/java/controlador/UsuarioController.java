@@ -21,7 +21,7 @@ public class UsuarioController extends HttpServlet {
         List<Usuario> listaUsuarios = model.obtenerUsuarios();
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaUsuarios", listaUsuarios);
-        request.getRequestDispatcher("Pagina1/VistaAdministrativo/Usuarios/listaUsuarios.jsp").forward(request,response);
+        request.getRequestDispatcher("VistaAdministrativo/Usuarios/listaUsuarios.jsp").forward(request,response);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class UsuarioController extends HttpServlet {
             case "ver":
                 Usuario usuarioVer = model.obtenerUsuario(id);
                 misesion.setAttribute("usuario", usuarioVer);
-                request.getRequestDispatcher("Pagina1/VistaAdministrativo/Usuarios/usuarioEditar.jsp").forward(request,response);
+                request.getRequestDispatcher("VistaAdministrativo/Usuarios/usuarioEditar.jsp").forward(request,response);
                 break;
             case "editar":
                 model.editarUsuario(id,nombre, correo, password);
