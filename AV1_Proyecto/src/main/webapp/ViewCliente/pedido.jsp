@@ -244,7 +244,7 @@
                                         </div>
                                         <div class="dato-input">
                                             <label for="codigo-tarjeta">Código de seguridad</label>
-                                            <input class="small" type="text" pattern="[0-9]{3,4}" id="codigo-tarjeta" name="codigo de tarjeta">
+                                            <input class="small" type="text" pattern="[0-9]{3,4}" id="codigo-tarjeta" name="codigoSeguridad">
                                             <b class="campo-fail hidden">*Es obligatorio este campo</b>
                                         </div>
                                     </div>

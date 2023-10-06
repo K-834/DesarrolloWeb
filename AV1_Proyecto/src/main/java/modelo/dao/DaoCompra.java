@@ -4,12 +4,13 @@
  */
 package modelo.dao;
 
-import config.db;
+
 import entidades.Carrito;
 import entidades.Compra;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import modelo.config.db;
 
 /**
  *
