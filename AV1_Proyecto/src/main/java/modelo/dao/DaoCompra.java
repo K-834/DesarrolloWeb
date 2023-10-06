@@ -5,12 +5,13 @@
 package modelo.dao;
 
 
-import entidades.Carrito;
-import entidades.Compra;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import modelo.config.db;
+import modelo.entidades.Carrito;
+import modelo.entidades.Compra;
 
 /**
  *
