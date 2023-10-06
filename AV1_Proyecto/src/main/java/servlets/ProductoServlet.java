@@ -1,5 +1,4 @@
-
-package controlador;
+package servlets;
 
 import entidades.Producto;
 import java.io.IOException;

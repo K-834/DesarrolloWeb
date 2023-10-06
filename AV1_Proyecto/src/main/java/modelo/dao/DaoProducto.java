@@ -1,6 +1,5 @@
 package modelo.dao;
 
-import config.db;
 import entidades.ProductosCatalogo;
 
 import java.io.BufferedInputStream;
@@ -13,6 +12,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+import modelo.config.db;
 
 public class DaoProducto {
 

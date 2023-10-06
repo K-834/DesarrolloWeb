@@ -1,14 +1,15 @@
 package modelo.controller;
 
-import proyecto.config.Encryptor;
+import config.Encryptor;
+import entidades.Usuario;
+import modelo.UsuarioModel;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
-import modelo.entidades.Usuario;
-import modelo.model.UsuarioModel;
 
 @WebServlet(name = "UsuarioController", value = "/UsuarioController")
 public class UsuarioController extends HttpServlet {

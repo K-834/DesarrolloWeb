@@ -1,9 +1,11 @@
 
-package modelo.model;
+package modelo;
 
-import entidades.Producto;
 import java.util.ArrayList;
 import java.util.List;
+import entidades.Producto;
+
+
 /**
  *
  * @author aferz

@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:AV1_Proyecto/src/main/java/modelo/entidades/Producto.java
-package modelo.entidades;
-========
 package entidades;
->>>>>>>> main:AV1_Proyecto/src/main/java/entidades/Producto.java
+
 
 /**
  *

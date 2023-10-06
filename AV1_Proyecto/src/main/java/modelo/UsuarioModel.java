@@ -1,7 +1,9 @@
-package modelo.model;
+
+package modelo;
 
 import entidades.Usuario;
 import modelo.config.db;
+
 
 
 import java.sql.Connection;

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:AV1_Proyecto/src/main/java/modelo/entidades/Usuario.java
-package modelo.entidades;
-========
 package entidades;
->>>>>>>> main:AV1_Proyecto/src/main/java/entidades/Usuario.java
 
 public class Usuario {
     
