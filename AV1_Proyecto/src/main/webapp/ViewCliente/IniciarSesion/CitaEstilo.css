@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+.cancelarcss{
+    min-width: 710px;
+}
+
+.registro3{
+    border: 5px solid transparent;
+    background-image: url("https://i.pinimg.com/222x/66/e1/02/66e102ad279ee69ca7f5a110855cc34e.jpg");
+}
+.tamaño3 {
+    margin: 20px 50px;
+    display: flex;
+    border-radius: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.imgR3 {
+    flex: 1;
+    background-image: url("https://img.freepik.com/vector-gratis/ilustracion-concepto-veterinario_114360-3007.jpg?w=740&t=st=1685082071~exp=1685082671~hmac=4cbbaaa12d93a6d968ab527a871d3da36dc28aa3f2bc7fd37c64090e4a6292f9");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+
+.reg3 {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    margin-left: 50px ;
+    font-size: 25px;
+}
+
+form ul {
+    margin: 50px 0;
+    padding: 0;
+    list-style: none;
+}
+
+form li {
+    margin-left: -50px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#envio3 {
+    display: block;
+    margin: 50px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+form label {
+    color: rgba(0, 0, 0, 0.2);
+    font-family: 'Lilita One', cursive;
+}
+
+form input {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    outline: none;
+    backdrop-filter: blur(10px);
+}
+
+input[type="submit"]{
+    font-size: 15px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 16px black;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+    
+  }
+
+@media(max-width:1200px) {
+
+    .imgR3 {
+        display: none;
+    }
+
+    .reg3 {
+        background-image: url("https://img.freepik.com/vector-gratis/ilustracion-concepto-veterinario_114360-3007.jpg?w=740&t=st=1685082071~exp=1685082671~hmac=4cbbaaa12d93a6d968ab527a871d3da36dc28aa3f2bc7fd37c64090e4a6292f9");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        margin-left: 0;
+
+    }
+    
+    #envio3{
+        backdrop-filter: blur(0px);
+    }
+
+    form label {
+        color: black;
+        font-size: 15px;
+    }
+
+}
+.opciones {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #555;
+  }
+  
+  #opciones option[disabled]:first-child {
+    color: #888;
+  }
+  
+  #opciones option[selected] {
+    font-weight: bold;
+  }
+  
+  #opciones option:nth-child(even) {
+    background-color: #f7f7f7;
+  }
+
+  
+  #radturno{
+    display: flex;
+    gap: 1%;
+  }
+  
+  #radturno label{ 
+    display: flex;
+
+  }
+
+  #radturno input{ 
+    backdrop-filter: blur(0px);
+
+  }
+
+
+  /**********************************/
+
+  
+  .container label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+  
+  .container  label input {
+    position: absolute;
+    left: -999px;
+  }
+  
+  .container label input:checked + span {
+    background-color: black;
+    color: white;
+  }
+  
+  .container label input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em black;
+  }
+  
+  .container label span {
+    display: flex;
+    align-items: center;
+    padding: 0.375em 0.75em 0.375em 0.375em;
+    border-radius: 99em;
+    transition: 0.25s ease;
+    color: black;
+  }
+  
+  .container label span:hover {
+    background-color: white;
+  }
+  
+  .container label span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em #00005c;
+  }
+  

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modelo.entidades.carrito;
+package modelo.entidades;
 
 import java.io.InputStream;
 
@@ -10,7 +10,7 @@ import java.io.InputStream;
  *
  * @author antho
  */
-public class Producto {
+public class ProductosCatalogo {
     private int id;
     private String nombres;
     private InputStream foto;
@@ -18,10 +18,10 @@ public class Producto {
     private double precio;
     private int stock;
 
-    public Producto() {
+    public ProductosCatalogo() {
     }
 
-    public Producto(int id, String nombres, InputStream foto, String descripcion, double precio, int stock) {
+    public ProductosCatalogo(int id, String nombres, InputStream foto, String descripcion, double precio, int stock) {
         this.id = id;
         this.nombres = nombres;
         this.foto = foto;

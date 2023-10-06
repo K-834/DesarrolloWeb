@@ -1,15 +1,14 @@
-package proyecto.controller;
+package modelo.controller;
 
 import proyecto.config.Encryptor;
-import proyecto.entidades.Usuario;
-import proyecto.model.UsuarioModel;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import modelo.entidades.Usuario;
+import modelo.model.UsuarioModel;
 
 @WebServlet(name = "UsuarioController", value = "/UsuarioController")
 public class UsuarioController extends HttpServlet {
@@ -63,10 +62,10 @@ public class UsuarioController extends HttpServlet {
                     if(encryptPassLogin.equals(model.obtenerHashedPass(correo))) {
                         Usuario usuarioLogin = model.login(correo, encryptPassLogin);
                         misesion.setAttribute("usuario", usuarioLogin);
-                        request.getRequestDispatcher("Pagina1/VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
+                        request.getRequestDispatcher("VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
                     }
                     else {
-                        request.getRequestDispatcher("Pagina1/VistaCliente/Login/Login.jsp").forward(request,response);
+                        request.getRequestDispatcher("VistaCliente/Login/Login.jsp").forward(request,response);
                     }
                 }
                 catch (NoSuchAlgorithmException e) {
@@ -81,10 +80,10 @@ public class UsuarioController extends HttpServlet {
                     if(model.agregarUsuario("CLIENTE", nombre, correo, encryptPassRegistro)) {
                         Usuario usuarioRegistro = model.login(correo, encryptPassRegistro);
                         misesion.setAttribute("usuario", usuarioRegistro);
-                        request.getRequestDispatcher("Pagina1/VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
+                        request.getRequestDispatcher("VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
                     }
                     else {
-                        request.getRequestDispatcher("Pagina1/VistaCliente/Registro/Registro.jsp").forward(request,response);
+                        request.getRequestDispatcher("VistaCliente/Registro/Registro.jsp").forward(request,response);
                     }
                 }
                 catch (NoSuchAlgorithmException e) {

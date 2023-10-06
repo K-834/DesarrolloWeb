@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+/************************ACTUALIZACION DE MODAL LOGIN*******************************/
+
+
+.contenido-login {
+    position: relative;
+    background-color: white;
+    top: 79%;
+    left: 38%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    font-size: 15px;
+    border-radius: 10px;
+    color: black;
+    padding: 3px 25px;
+}
+
+.contenido-login:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 16px black;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+}
+
+.contenido-login:focus {
+    background-color: red;
+
+}
+
+#cuenta {
+    position: relative;
+    margin: 3px auto;
+    border: 0;
+    background-color: transparent;
+
+}
+
+#cuenta:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    
+
+
+}
+
+#formularioLogin {
+    animation: animacion2 1s ease-out;
+    animation-duration: 1ms;
+}
+
+@keyframes animacion2 {
+    0% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+/*******************************************************/
+.registro1{
+    border: 5px solid transparent;
+    background-image: url("https://i.pinimg.com/222x/66/e1/02/66e102ad279ee69ca7f5a110855cc34e.jpg");
+}
+.tamaño {
+    margin: 20px 50px;
+    display: flex;
+    border-radius: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.imgR {
+    
+    flex: 1;
+    background-image: url("ImagenesInicioSesion/GatoLogin.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+}
+
+
+.reg {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    min-height: 400px;
+    
+}
+
+.form ul {
+    margin: 50px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.form li {
+    margin-left: -30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#envio {
+    display: block;
+    margin: 50px auto 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.form label {
+    color: rgba(0, 0, 0, 0.2);
+    font-family: 'Lilita One', cursive;
+}
+
+.form input {
+    background-color: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    outline: none;
+    backdrop-filter: blur(10px);
+}
+
+#envio{
+    font-size: 15px;
+}
+
+#envio:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 16px black;
+    transform: scale(1.1);
+    transition: all 0.2s ease;
+    
+  }
+
+
+.imgRColumna {
+    background-image: url("https://pbs.twimg.com/media/FMtLuVnWQAEwraU.jpg:large");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    width: 500px;
+    height: 600px;
+}
+
+.regColumna {
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+}
+
+.tamañoColumna {
+    margin: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    background-color: rgb(116, 34, 132);
+}
+.pago{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pago h1{
+    position: absolute;
+    left: 50px;
+}
+.pago p{
+    margin-top: 50px;
+    font-size: 5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.pago h2{
+    font-family: sans-serif;
+    color: red;
+    font-size: 10vh;
+}
+
+
+@media(max-width:600px) {
+
+    .imgR {
+        display: none;
+    }
+
+    .reg {
+        background-image: url("ImagenesInicioSesion/GatoLogin.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+    }
+    
+    #envio{
+        backdrop-filter: blur(0px);
+    }
+
+    .form label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+    }
+
+
+}

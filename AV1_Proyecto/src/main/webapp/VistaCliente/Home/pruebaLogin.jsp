@@ -1,4 +1,4 @@
-<%@ page import="proyecto.entidades.Usuario" %>
+<%@page import="modelo.entidades.Usuario"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Usuario usuario = (Usuario)request.getSession().getAttribute("usuario");
