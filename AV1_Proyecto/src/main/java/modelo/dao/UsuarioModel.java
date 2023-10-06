@@ -1,15 +1,14 @@
-package modelo.model;
+package modelo.dao;
 
-import entidades.Usuario;
+
 import modelo.config.db;
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import modelo.entidades.Usuario;
 
 public class UsuarioModel {
     private Connection connection;
