@@ -21,6 +21,6 @@
             </div>
             <a href="CatalogoServlet?accion=Carrito" class="carrito" id="carrito-header"><i class="bi bi-cart2"></i>(${contador})</a>
             
-            <button id="toggleCartBtn1" data-bs-toggle="modal" data-bs-target="#modal_cart" class="user"><i class="bi bi-person-circle"></i></button>
+            <a id="toggleCartBtn1" data-bs-toggle="modal" data-bs-target="#myModal" class="user"><i class="bi bi-person-circle"></i></a>
         </div>
     </header>

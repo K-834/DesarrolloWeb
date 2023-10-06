@@ -3,7 +3,7 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.List;
-import entidades.Producto;
+import modelo.entidades.Producto;
 
 
 /**

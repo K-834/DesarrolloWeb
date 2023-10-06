@@ -6,7 +6,7 @@
 
 <!-- The Modal -->
 <div class="modal fade" id="myModal" aria-hidden="true" tabindex="-1" >
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl modal-fullscreen-xxl-down">
         <link href="../IniciarSesion/modalG.css" rel="stylesheet">
         <div class="modal-content">
 

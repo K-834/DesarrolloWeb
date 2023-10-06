@@ -65,7 +65,7 @@
 /*******************************************************/
 .registro1{
     border: 5px solid transparent;
-    background-image: url("https://i.pinimg.com/222x/66/e1/02/66e102ad279ee69ca7f5a110855cc34e.jpg");
+    background-image: url('ImagenesInicioSesion/perfume.gif');
 }
 .tamaño {
     margin: 20px 50px;
@@ -78,11 +78,12 @@
 .imgR {
     
     flex: 1;
-    background-image: url("ImagenesInicioSesion/GatoLogin.jpg");
+    background-image: url("ImagenesInicioSesion/perfume.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50px;
+    margin-right: 30px;
 }
 
 
@@ -208,7 +209,7 @@
     }
 
     .reg {
-        background-image: url("ImagenesInicioSesion/GatoLogin.jpg");
+        background-image: url("ImagenesInicioSesion/perfume.gif");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

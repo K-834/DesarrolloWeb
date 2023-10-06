@@ -1,7 +1,6 @@
-
 package controlador;
 
-import entidades.Producto;
+
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import modelo.ProductoMemoryData;
+import modelo.entidades.Producto;
 
 
 @WebServlet(name = "ProductoServlet", urlPatterns = {"/ProductoServlet"})
