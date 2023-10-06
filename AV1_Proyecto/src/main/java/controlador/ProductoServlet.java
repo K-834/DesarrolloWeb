@@ -1,7 +1,10 @@
+<<<<<<<< HEAD:AV1_Proyecto/src/main/java/controlador/ProductoServlet.java
+package controlador;
+========
 package servlets;
+>>>>>>>> main:AV1_Proyecto/src/main/java/servlets/ProductoServlet.java
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,8 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+<<<<<<<< HEAD:AV1_Proyecto/src/main/java/controlador/ProductoServlet.java
+import modelo.entidades.Producto;
+import modelo.model.ProductoMemoryData;
+========
 import entidades.Producto;
 import modelo.ProductoMemoryData;
+>>>>>>>> main:AV1_Proyecto/src/main/java/servlets/ProductoServlet.java
 
 @WebServlet(name = "ProductoServlet", urlPatterns = {"/ProductoServlet"})
 public class ProductoServlet extends HttpServlet {

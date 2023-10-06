@@ -1,12 +1,6 @@
+package modelo.controller;
+
 import proyecto.config.Encryptor;
-
-package controller;
-
-import config.Encryptor;
-import entidades.Usuario;
-import modelo.UsuarioModel;
-
->>>>>>>> main:AV1_Proyecto/src/main/java/controller/UsuarioController.java
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

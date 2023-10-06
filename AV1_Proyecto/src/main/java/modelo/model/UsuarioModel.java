@@ -1,7 +1,14 @@
+<<<<<<<< HEAD:AV1_Proyecto/src/main/java/modelo/model/UsuarioModel.java
+package modelo.model;
+
+import modelo.config.db;
+import modelo.entidades.Usuario;
+========
 package modelo;
 
 import config.db;
 import entidades.Usuario;
+>>>>>>>> main:AV1_Proyecto/src/main/java/modelo/UsuarioModel.java
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

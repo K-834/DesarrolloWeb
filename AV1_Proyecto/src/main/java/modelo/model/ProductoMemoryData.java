@@ -1,8 +1,16 @@
+<<<<<<<< HEAD:AV1_Proyecto/src/main/java/modelo/model/ProductoMemoryData.java
+package modelo.model;
+
+import java.util.ArrayList;
+import java.util.List;
+import modelo.entidades.Producto;
+========
 package modelo;
 
 import java.util.ArrayList;
 import java.util.List;
 import entidades.Producto;
+>>>>>>>> main:AV1_Proyecto/src/main/java/modelo/ProductoMemoryData.java
 
 /**
  *
