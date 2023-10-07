@@ -62,10 +62,10 @@ public class UsuarioController extends HttpServlet {
                     if(encryptPassLogin.equals(model.obtenerHashedPass(correo))) {
                         Usuario usuarioLogin = model.login(correo, encryptPassLogin);
                         misesion.setAttribute("usuario", usuarioLogin);
-                        request.getRequestDispatcher("VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
+                        request.getRequestDispatcher("ViewCliente/").forward(request,response);
                     }
                     else {
-                        request.getRequestDispatcher("VistaCliente/Login/Login.jsp").forward(request,response);
+                        request.getRequestDispatcher("ViewCliente/").forward(request,response);
                     }
                 }
                 catch (NoSuchAlgorithmException e) {
@@ -80,10 +80,10 @@ public class UsuarioController extends HttpServlet {
                     if(model.agregarUsuario("CLIENTE", nombre, correo, encryptPassRegistro)) {
                         Usuario usuarioRegistro = model.login(correo, encryptPassRegistro);
                         misesion.setAttribute("usuario", usuarioRegistro);
-                        request.getRequestDispatcher("VistaCliente/Home/pruebaLogin.jsp").forward(request,response);
+                        request.getRequestDispatcher("ViewCliente").forward(request,response);
                     }
                     else {
-                        request.getRequestDispatcher("VistaCliente/Registro/Registro.jsp").forward(request,response);
+                        request.getRequestDispatcher("ViewCliente").forward(request,response);
                     }
                 }
                 catch (NoSuchAlgorithmException e) {

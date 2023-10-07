@@ -52,21 +52,22 @@
 
         </div>
         <div class="popup popup-login hidden" id="popup-login">
-            <form action="" class="form">
+            <form action="/AV1_Proyecto/UsuarioController" class="form" method="POST">
+                <input class="hidden" name="accion" type="text" value="login">
                 <h1>INICIO DE SESIÓN</h1>
-                <input type="text" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
+                <input type="text" name="usuario-correo" placeholder="Correo">
+                <input type="password" name="usuario-contrasena" placeholder="Contraseña">
                 <button>INGRESAR</button>
                 <p>¿No tienes cuenta? <span data-registrate="registrate">Regístrate</span></p>
             </form>
         </div>
         <div class="popup popup-registrate hidden" id="popup-registrate">
-            <form action="" class="form">
+            <form action="/AV1_Proyecto/UsuarioController" method="POST" class="form">
+                <input class="hidden" name="accion" type="text" value="registro">
                 <h1>REGISTRO</h1>
-                <input type="text" placeholder="Ingrese su nombre">
-                <input type="text" placeholder="Ingrese apellido">
-                <input type="text" placeholder="Ingrese correo">
-                <input type="password" placeholder="Ingrese contraseña">
+                <input type="text" name="usuario-nombre" placeholder="Ingrese su nombre">
+                <input type="email" name="usuario-correo" placeholder="Ingrese correo">
+                <input type="password" name="usuario-contrasena" placeholder="Ingrese contraseña">
                 <button>REGISTRATE</button>
             </form>
         </div>
