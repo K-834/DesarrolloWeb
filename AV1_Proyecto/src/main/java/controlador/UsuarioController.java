@@ -19,9 +19,9 @@ public class UsuarioController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Usuario> listaUsuarios = model.obtenerUsuarios();
-        HttpSession misesion = request.getSession();
+        HttpSession misesion = request.getSession();;
         misesion.setAttribute("listaUsuarios", listaUsuarios);
-        request.getRequestDispatcher("VistaAdministrativo/Usuarios/listaUsuarios.jsp").forward(request,response);
+        request.getRequestDispatcher("VistaAdministrativo/Usuarios/listaUsuarios.jsp").forward(request, response);
     }
 
     @Override
@@ -37,18 +37,18 @@ public class UsuarioController extends HttpServlet {
 
         HttpSession misesion = request.getSession();
 
-        switch(accion){
+        switch (accion) {
             case "agregar":
                 model.agregarUsuario(tipo, nombre, correo, password);
-                doGet(request,response);
+                doGet(request, response);
                 break;
             case "ver":
                 Usuario usuarioVer = model.obtenerUsuario(id);
                 misesion.setAttribute("usuario", usuarioVer);
-                request.getRequestDispatcher("VistaAdministrativo/Usuarios/usuarioEditar.jsp").forward(request,response);
+                request.getRequestDispatcher("VistaAdministrativo/Usuarios/usuarioEditar.jsp").forward(request, response);
                 break;
             case "editar":
-                model.editarUsuario(id,nombre, correo, password);
+                model.editarUsuario(id, nombre, correo, password);
                 doGet(request, response);
                 break;
             case "eliminar":
@@ -57,41 +57,40 @@ public class UsuarioController extends HttpServlet {
                 break;
             case "login":
                 try {
-                    String encryptPassLogin = encryptor.encryptString(password);
+                String encryptPassLogin = encryptor.encryptString(password);
 
-                    if(encryptPassLogin.equals(model.obtenerHashedPass(correo))) {
-                        Usuario usuarioLogin = model.login(correo, encryptPassLogin);
-                        misesion.setAttribute("usuario", usuarioLogin);
-                        request.getRequestDispatcher("ViewCliente/").forward(request,response);
-                    }
-                    else {
-                        request.getRequestDispatcher("ViewCliente/").forward(request,response);
-                    }
+                if (encryptPassLogin.equals(model.obtenerHashedPass(correo))) {
+                    Usuario usuarioLogin = model.login(correo, encryptPassLogin);
+                    misesion.setAttribute("usuario", usuarioLogin.getNombre());
+                    misesion.setAttribute("usuarioCorreo", usuarioLogin.getCorreo());
+                    misesion.setAttribute("tipoUsuario", usuarioLogin.getTipo());
+                    misesion.setAttribute("usuarioAutenticado", true);
+                    response.sendRedirect(request.getContextPath() + "/CatalogoServlet?accion=Sesion");
+                   // request.getRequestDispatcher("ViewCliente/carrito.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("ViewCliente/index.jsp").forward(request, response);
                 }
-                catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                }
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
 
-                break;
+            break;
             case "registro":
                 try {
-                    String encryptPassRegistro = encryptor.encryptString(password);
+                String encryptPassRegistro = encryptor.encryptString(password);
 
-                    if(model.agregarUsuario("CLIENTE", nombre, correo, encryptPassRegistro)) {
-                        Usuario usuarioRegistro = model.login(correo, encryptPassRegistro);
-                        misesion.setAttribute("usuario", usuarioRegistro);
-                        request.getRequestDispatcher("ViewCliente").forward(request,response);
-                    }
-                    else {
-                        request.getRequestDispatcher("ViewCliente").forward(request,response);
-                    }
+                if (model.agregarUsuario("CLIENTE", nombre, correo, encryptPassRegistro)) {
+                    Usuario usuarioRegistro = model.login(correo, encryptPassRegistro);
+                    misesion.setAttribute("usuario", usuarioRegistro);
+                    request.getRequestDispatcher("ViewCliente/carrito.jsp").forward(request, response);
+                } else {
+                    request.getRequestDispatcher("ViewCliente/index.jsp").forward(request, response);
                 }
-                catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                }
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
 
-
-                break;
+            break;
         }
     }
 }
