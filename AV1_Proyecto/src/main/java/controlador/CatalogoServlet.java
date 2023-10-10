@@ -76,7 +76,7 @@ public class CatalogoServlet extends HttpServlet {
                 request.setAttribute("VerCompras", listaCarrito);
                 request.setAttribute("contador", listaCarrito.size());
                 request.setAttribute("totalPagar", totalPagar);
-                request.getRequestDispatcher("/VistaCliente/Home/checkout.jsp").forward(request, response);
+                request.getRequestDispatcher("/ViewCliente/pedido.jsp").forward(request, response);
 
                 break;
             case "AgregarCarrito":
@@ -134,7 +134,7 @@ public class CatalogoServlet extends HttpServlet {
                     totalPagar = totalPagar + listaCarrito.get(i).getSubTotal();
                 }
                 request.setAttribute("totalPagar", totalPagar);
-                request.getRequestDispatcher("/VistaCliente/Home/carrito.jsp").forward(request, response);
+                request.getRequestDispatcher("/ViewCliente/carrito.jsp").forward(request, response);
                 break;
             case "Borrar":
                 int idProducto = Integer.parseInt(request.getParameter("idp"));
@@ -176,7 +176,7 @@ public class CatalogoServlet extends HttpServlet {
                 break;
             default:
                 request.setAttribute("productos", productos);
-                request.getRequestDispatcher("/VistaCliente/Home/index.jsp").forward(request, response);
+                request.getRequestDispatcher("/ViewCliente/productos.jsp").forward(request, response);
 
         }
     }

@@ -3,7 +3,6 @@
     Created on : 6 oct. 2023, 05:51:56
     Author     : antho
 --%>
-
 <!-- The Modal -->
 <div class="modal fade" id="myModal" aria-hidden="true" tabindex="-1" >
     <div class="modal-dialog modal-xl modal-fullscreen-xxl-down">
@@ -19,7 +18,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="registro1">
-                    <div class="tamaï¿½o" id="cambio">
+                    <div class="tamaño" id="cambio">
                         <div class="imgR">
 
                         </div>
@@ -33,14 +32,14 @@
                                         <li><input type="text" id="lastname" name="lastname" required></li>
                                         <li><small><label for="dni">DNI:</label> </small></li>
                                         <li><input type="number" id="dni" name="dni" required></li>
-                                        <li><small><label for="correo">Correo Electrï¿½nico:</label> </small></li>
+                                        <li><small><label for="correo">Correo Electrico:</label> </small></li>
                                         <li><input type="email" id="correo" name="correo" required></li>
 
 
                                         <li>
                                             <label>Nacionalidad:</label><br>
                                             <select id="nacionalidad" name="nacionalidad" required>
-                                                <option value="Peru" selected>Perï¿½</option>
+                                                <option value="Peru" selected>Perú</option>
                                                 <option value="chile">Chile</option>
                                                 <option value="Brasil">Brasil</option>
                                                 <option value="Colombia">Colombia</option>
@@ -76,7 +75,7 @@
 
 
 
-                                        <li><small><label for="contrasena">Contraseï¿½a:</label> </smal>
+                                        <li><small><label for="contrasena">Contraseña:</label></smal>
                                         </li>
                                         <li><input type="password" id="password" name="password" required></li>
 
@@ -111,7 +110,7 @@
             </div>
             <div class="modal-body">
                 <div class="registro1">
-                    <div class="tamaï¿½o" id="cambio">
+                    <div class="tamaño" id="cambio">
                         <div class="imgR">
 
                         </div>
@@ -120,10 +119,10 @@
                                 <form method="post" action="/AV1_Proyecto/UsuarioController">
                                     <input class="hidden" name="accion" type="text" value="login">
                                     <ul>
-                                        <li><small><label for="correo">Correo Electrï¿½nico:</label> </small></li>
+                                        <li><small><label for="correo">Correo Electrico:</label> </small></li>
                                         <li><input type="email" id="correo" name="usuario-correo" required></li>
 
-                                        <li><small><label for="contrasena">Contraseï¿½a:</label> </smal>
+                                        <li><small><label for="contrasena">Contraseña:</label> </smal>
                                         </li>
                                         <li><input type="password" id="contrasena" name="usuario-contrasena" required></li>
 

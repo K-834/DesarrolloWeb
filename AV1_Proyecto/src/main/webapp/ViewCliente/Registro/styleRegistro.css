@@ -1,0 +1,363 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif;
+    
+}
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    
+}
+body{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image:  url('../Productos/Img/perfume.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.box{
+    
+    margin: 50px auto 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 420px;
+    height: 450px;
+    background: #f700ffbb;
+    padding: 20px 50px 80px 80px;
+    overflow: hidden;
+}
+
+.box::before{
+    content:'';
+    z-index: 1;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 520px;
+    transform-origin: bottom right;
+
+    background: linear-gradient(0deg,transparent,
+    #45f3ff,#45f3ff);
+    animation: animate 6s linear infinite;
+}
+.box::after{
+    content:'';
+    z-index: 1;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 520px;
+    transform-origin: bottom right;
+
+    background: linear-gradient(0deg,transparent,
+    #45f3ff,#45f3ff);
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+#Formulario {
+    position: absolute;
+    inset: 2px;
+    background: rgba(255, 255, 255, 1);
+    
+    padding: 50px 50px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    color: #d3e7ed;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.1em;
+
+}
+.inputBox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+.inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+
+}
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px ;
+    pointer-events: none;
+    font-size: 1em;
+    color: #8f8f8f;
+
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #45f3ff;
+    transform: translateX(0px)translateY(-34px);
+    font-size: 0.75em;
+}
+.inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+    background: #45f3ff;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i {
+    height: 40px;
+}
+
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 11px 25px;
+    background: #45f3ff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1em;
+    width: 140px;
+    margin: 10px;
+    display: inline-block;
+    
+}
+input[type="submit"]:active {
+    opacity: 0.8;
+}
+.Iniciar:hover{
+    background-color: #246266;
+}
+.cancel-button {
+    border: none;
+    outline: none;
+    padding: 11px 25px;
+    background: #45f3ff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    
+    font-family:'Poppins',sans-serif;
+    width: 120px;
+    margin: 10px;
+    display: inline-block;
+    color:black;
+    text-decoration: none;
+  }
+  .cancel-button:hover {
+    background-color: #246266;
+  }
+.Juntar{
+    
+    margin-top: 20px;
+}
+
+/* inicio centrar el incono */
+.nav0{
+    background: black;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.nav0 img{
+    max-width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.nav0 p{
+    color: white;
+}
+
+/* fin */
+
+
+
+/* inico  centrar las ventanas*/
+.nav1{
+    padding-left: 600px;
+}
+
+
+.nav1 a{
+    float: left;
+    padding-right: 80px;
+    color: white;
+    text-decoration: none;
+    
+}
+/* fin */
+
+.nav2{
+    background: #DDC7A2;
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    width: 100%;
+}
+
+
+.text{
+    margin-right: 200px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav2 input[type=search]{
+    float: right;
+    padding: 6px;
+    
+    margin-right: 16px;
+    border: #7300e0 2px solid;
+    border-radius: 20px;
+   
+}
+
+.nav3{
+    padding-left: 400px;
+}
+
+.nav3 a{
+    float: left;
+    padding-right: 80px;
+    color:black;
+    text-decoration: none;
+}
+
+/* menu de navegacion */
+
+nav{
+    margin: auto;
+    width: 100%;
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    font-size: 15px;
+    background-color: #edecec;
+    margin: 0;
+    padding: 0;
+}
+
+  
+
+
+.nav4{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.nav4 > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.nav4 > li:hover{
+    background-color: red;
+}
+
+.nav-hechado{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .5);
+    
+}
+
+.nav4 li:hover .nav-hechado{
+    display: block;
+}
+
+.nav-hechado li:hover{
+    background-color: black;
+}
+
+.nav-hechado li a{
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    height: 100px; 
+    margin-top: 20px; 
+    padding-top: 10px;
+}
+footer a{
+    color: #fff;
+}
+main{
+    margin-top: 0px;
+    position: static;
+}
+
+/*LINK*/
+.links a {
+    
+    margin: 10px 0 0 15px;
+   
+    font-size: 0.75em;
+    color: #FF0000;
+    text-decoration: beige;
+    position: absolute;
+    
+}
+.links a:hover , .links a:nth-child(2) {
+    color: #00A45E;
+}
+
+
