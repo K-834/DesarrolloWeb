@@ -22,14 +22,15 @@
     </head>
     <body>
         <%@include file="header/header.jsp" %>
-        <form action="CatalogoServlet" method="post" >
+        <form action="CatalogoServlet?accion=GenerarCompra" method="post" >
+           <input type="hidden" name="perfilID" value="${usuarioID}">
             <main class="main-pedido">
 
 
                 <h1>PROCESO DE PEDIDO</h1>
 
                 <div class="paneles">
-
+                    
                     <div class="usuario">
                         <div class="identificacion" id="identificacion">
                             <div class="titulo">
@@ -70,7 +71,7 @@
                                     </div>
                                     <div class="dato-input">
                                         <label for="telefono">Telefono celular*</label>
-                                        <input type="text" pattern="[0-9]{7}" id="telefono" name="telefono" required>
+                                        <input type="text" pattern="[0-9]{9}" id="telefono" name="telefono" required>
                                         <b class="campo-fail hidden">*Es obligatorio este campo</b>
                                     </div>
                                 </div>
@@ -208,7 +209,7 @@
                                             <b class="campo-fail hidden">*Es obligatorio este campo</b>
                                         </div>
                                         <div class="dato-input">
-                                            <p for="fecha-vencimiento">Fecha de Vencimiento</p>
+                                            <label for="fecha-vencimiento" >Fecha de Vencimiento</label>
                                             <div class="listas">
                                                 <select name="mes" id="mes" required>
                                                     <option value="">MM</option>
@@ -280,18 +281,6 @@
                                 </div>
 
                             </c:forEach>
-                            <!--
-                            <div class="producto">
-                                <div class="imagen">
-                                    <img src="assets/img/productos/queso_fresco.png" alt="queso freco">
-                                </div>
-                                <div class="info">
-                                    <p class="nombre">Queso Fresco</p>
-                                    <p class="cantidad">1</p>
-                                    <p class="precio">S/34.50</p>
-                                </div>
-                            </div>
-                            -->
                         </div>
 
                         <div class="total-resumen">
@@ -320,7 +309,7 @@
             </div>
             <div class="popup popup-cambio-responsable hidden" id="popup-cambio-responsable">
                 <h1>Cambio de responsable de recojo</h1>
-                <input id="nombre-responsable-nuevo" type="text" placeholder="Nombre de responsable">
+                <input id="renombre-responsable-nuevo" type="text" placeholder="Nombre de responsable">
                 <input id="dni-responsable-nuevo" type="text" placeholder="N° de documento">
                 <button data-cambiarresponsable="cambiarresponsable">CAMBIAR RESPONSABLE</button>
             </div>

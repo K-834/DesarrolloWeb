@@ -9,7 +9,7 @@
         <div class="logo-contenedor">
             <a href="/AV1_Proyecto/ViewCliente/index.jsp" id="logo-header"><img src="assets/img/Marisol_Logo.png" alt="logo Marisol"></a>
         </div>
-        <a href="../CatalogoServlet?accion=home">Productos<i class="bi bi-caret-down-fill"></i></a>
+        <a href="../CatalogoServlet?accion=productos">Productos<i class="bi bi-caret-down-fill"></i></a>
         <a href="">Ofertas</a>
         <c:if test="${tipoUsuario == 'ADMIN'}">
             <a class="nav-link disabled" href="/AV1_Proyecto/VistaAdministrativo/Home/Home.jsp" style="color: black; font-weight: bold;">ADMINISTRACIÓN</a>
@@ -38,7 +38,7 @@
                         <i class="bi bi-cart2"></i>(${contador})
                     </c:if>
                 </a>
-                <a id="toggleCartBtn1" href="/AV1_Proyecto/ViewCliente/perfil.jsp" class="user"><i class="bi bi-person-circle"></i></a>
+                <a id="toggleCartBtn1" href="/AV1_Proyecto/CatalogoServlet?perfil=${usuarioID}" class="user"><i class="bi bi-person-circle"></i></a>
                 </c:otherwise>
             </c:choose>
 
