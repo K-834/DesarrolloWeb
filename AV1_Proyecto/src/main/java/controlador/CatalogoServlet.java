@@ -7,6 +7,7 @@ package controlador;
 import config.Fecha;
 import modelo.dao.DaoProducto;
 import java.io.IOException;
+import static java.lang.System.out;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -18,6 +19,7 @@ import modelo.dao.DaoCompra;
 import modelo.entidades.Carrito;
 import modelo.entidades.ClienteProd;
 import modelo.entidades.Compra;
+import modelo.entidades.Pago;
 import modelo.entidades.ProductosCatalogo;
 
 /**
@@ -37,6 +39,7 @@ public class CatalogoServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     DaoProducto daoProd = new DaoProducto();
+
     ProductosCatalogo p = new ProductosCatalogo();
     List<ProductosCatalogo> productos = new ArrayList<>();
     List<Carrito> listaCarrito = new ArrayList<>();
@@ -49,9 +52,21 @@ public class CatalogoServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String accion = request.getParameter("accion");
-        productos = daoProd.listar();
 
+        String perfilVeri1 = request.getParameter("perfil");
+        if (perfilVeri1 != null) {
+            try {
+                DaoCompra daoComp = new DaoCompra();
+                List<Compra> compras = new ArrayList<>();;
+                int perfil = Integer.parseInt(request.getParameter("perfil"));
+                compras = daoComp.MostrarCompras(perfil);
+                request.setAttribute("compras", compras);
+                request.getRequestDispatcher("/ViewCliente/perfil.jsp").forward(request, response);
+            } catch (NumberFormatException e) {
+                System.out.println(e);
+            }
+        }
+        String accion = request.getParameter("accion");
         switch (accion) {
             case "Comprar":
                 totalPagar = 0.0;
@@ -107,7 +122,6 @@ public class CatalogoServlet extends HttpServlet {
                         car.setCantidad(cantidad);
                         car.setSubTotal(cantidad * p.getPrecio());
                         listaCarrito.add(car);
-
                     }
 
                 } else {
@@ -125,7 +139,7 @@ public class CatalogoServlet extends HttpServlet {
                 }
 
                 request.setAttribute("contador", listaCarrito.size());
-                request.getRequestDispatcher("CatalogoServlet?accion=home").forward(request, response);
+                request.getRequestDispatcher("CatalogoServlet?accion=productos").forward(request, response);
                 break;
             case "Carrito":
                 totalPagar = 0.0;
@@ -144,41 +158,53 @@ public class CatalogoServlet extends HttpServlet {
                         listaCarrito.remove(i);
                     }
                 }
-
                 break;
             case "ActualizarCantidad":
                 int idprod = Integer.parseInt(request.getParameter("idp"));
                 int cant = Integer.parseInt(request.getParameter("Cantidad"));
                 for (int i = 0; i < listaCarrito.size(); i++) {
-                    if (listaCarrito.get(i).getIdProducto()==idprod) {
+                    if (listaCarrito.get(i).getIdProducto() == idprod) {
                         listaCarrito.get(i).setCantidad(cant);
-                        double st =listaCarrito.get(i).getPrecioCompra() * cant;
+                        double st = listaCarrito.get(i).getPrecioCompra() * cant;
                         listaCarrito.get(i).setSubTotal(st);
                     }
                 }
                 break;
             case "GenerarCompra":
-                ClienteProd cliente = new ClienteProd();
-                cliente.setId(1);
-                DaoCompra daoC = new DaoCompra();
-                
-                //Pago pago = new Pago();
-                Compra compra = new Compra(cliente, 1, Fecha.FechaBD(), totalPagar, "Cancelado", listaCarrito);
-                int res = daoC.GenerarCompra(compra);
-                if (res != 0 && totalPagar>0) {
-                    request.getRequestDispatcher("CatalogoServlet?accion=Carrito").forward(request, response);
-                }else{
+                String perfilVeri = request.getParameter("perfilID");
+                request.setAttribute("VerCompras", listaCarrito);
+                if (perfilVeri != null) {
+                    try {
+                        int perfil = Integer.parseInt(perfilVeri);
+                        DaoCompra daoC = new DaoCompra();
+                        Compra compra = new Compra();
+                        compra.setCliente(perfil);
+                        compra.setFecha(Fecha.FechaBD());
+                        compra.setMonto(totalPagar);
+                        compra.setEstado("CANCELADO");
+                        compra.setDetalleCompra(listaCarrito);
+                        daoC.GenerarCompra(compra);
+                        request.getRequestDispatcher("CatalogoServlet?accion=Carrito").forward(request, response);
 
-                    request.getRequestDispatcher("CatalogoServlet?accion=home").forward(request, response);
+                    } catch (NumberFormatException e) {
+                        request.getRequestDispatcher("/ViewCliente/error.jsp").forward(request, response);
+                    }
+                } else {
+                    request.getRequestDispatcher("/ViewCliente/error.jsp").forward(request, response);
+
                 }
-                
-                
                 break;
-            default:
+
+            case "productos":
+                productos = daoProd.listar();
                 request.setAttribute("productos", productos);
                 request.getRequestDispatcher("/ViewCliente/productos.jsp").forward(request, response);
 
+            default:
+                request.getRequestDispatcher("/ViewCliente/error.jsp").forward(request, response);
+
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -194,7 +220,6 @@ public class CatalogoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**

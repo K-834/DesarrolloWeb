@@ -15,6 +15,8 @@ public class UsuarioController extends HttpServlet {
 
     UsuarioModel model = new UsuarioModel();
     Encryptor encryptor = new Encryptor();
+    
+    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,10 +64,11 @@ public class UsuarioController extends HttpServlet {
                 if (encryptPassLogin.equals(model.obtenerHashedPass(correo))) {
                     Usuario usuarioLogin = model.login(correo, encryptPassLogin);
                     misesion.setAttribute("usuario", usuarioLogin.getNombre());
+                    misesion.setAttribute("usuarioID", usuarioLogin.getId());
                     misesion.setAttribute("usuarioCorreo", usuarioLogin.getCorreo());
                     misesion.setAttribute("tipoUsuario", usuarioLogin.getTipo());
                     misesion.setAttribute("usuarioAutenticado", true);
-                    response.sendRedirect(request.getContextPath() + "/CatalogoServlet?accion=Sesion");
+                    response.sendRedirect(request.getContextPath() + "/CatalogoServlet?accion=productos");
                    // request.getRequestDispatcher("ViewCliente/carrito.jsp").forward(request, response);
                 } else {
                     request.getRequestDispatcher("ViewCliente/index.jsp").forward(request, response);

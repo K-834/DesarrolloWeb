@@ -29,27 +29,29 @@
             <a href="">CUIDADO PERSONAL</a>
             <a href="">LIMPIEZA</a>
         </nav>
+        
+        
         <h1>Mi Perfil</h1>
         <div class="perfil-campos">
             <div class="perfil-campo">
                 <label for="perfil-nombre">NOMBRE</label>
-                <p class="perfil-input" id="perfil-nombre">Alvaro</p>
+                <p class="perfil-input" id="perfil-nombre">${usuario}</p>
             </div>
             <div class="perfil-campo">
                 <label for="apellido">APELLIDO</label>
-                <p class="perfil-input" id="perfil-apellido">Fernandez</p>
+                <p class="perfil-input" id="perfil-apellido">---</p>
             </div>
             <div class="perfil-campo">
                 <label for="correo">CORREO</label>
-                <p class="perfil-input" id="perfil-correo">afernandez@gmail.com</p>
+                <p class="perfil-input" id="perfil-correo">${usuarioCorreo}</p>
             </div>
             <div class="perfil-campo">
                 <label for="documento">DOCUMENTO</label>
-                <p class="perfil-input" id="perfil-nombre">48527293</p>
+                <p class="perfil-input" id="perfil-nombre">---</p>
             </div>
             <div class="perfil-campo">
                 <label for="nombre">TELEFONO</label>
-                <p class="perfil-input" id="perfil-nombre">943802609</p>
+                <p class="perfil-input" id="perfil-nombre">---</p>
             </div>
             <div class="perfil-campo">
                 <button class="btn-editar-datos" data-abrireditardatos="abrireditardatos">EDITAR DATOS</button>
@@ -61,21 +63,23 @@
                 <tr>
                     <th>#</th>
                     <th>Fecha</th>
-                    <th>Codigo</th>
                     <th>Pago Total</th>
                     <th>Estado</th>
                     <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
+                <c:forEach items="${compras}" var="pe">
                 <tr>
-                    <td>1</td>
-                    <td>2023-10-15</td>
-                    <td>afpqqqnf5</td>
-                    <td>S/ 70.50</td>
-                    <td>ENTREGADO</td>
+                    <td>${pe.getId()}</td>
+                    <td>${pe.getFecha()}</td>
+                    <td>S/ ${pe.getMonto()}</td>
+                    <td>${pe.getEstado()}</td>
                     <td><a href=""><i class="bi bi-arrow-right-square-fill"></i>Ver</a></td>
                 </tr>
+                </c:forEach>
+
+                <!-- comment 
                 <tr>
                     <td>2</td>
                     <td>2023-10-17</td>
@@ -99,7 +103,7 @@
                     <td>S/ 25.15</td>
                     <td>ENTREGADO</td>
                     <td><a href=""><i class="bi bi-arrow-right-square-fill"></i>Ver</a></td>
-                </tr>
+                </tr>-->
             </tbody>
         </table>
     </main>
