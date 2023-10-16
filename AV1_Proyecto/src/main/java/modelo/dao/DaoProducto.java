@@ -41,9 +41,15 @@ public class DaoProducto {
             e.printStackTrace();
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -76,13 +82,27 @@ public class DaoProducto {
             e.printStackTrace();
         } finally {
             try {
-                if (bufferedOutputStream != null) bufferedOutputStream.close();
-                if (bufferedInputStream != null) bufferedInputStream.close();
-                if (outputStream != null) outputStream.close();
-                if (inputStream != null) inputStream.close();
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
+                if (bufferedOutputStream != null) {
+                    bufferedOutputStream.close();
+                }
+                if (bufferedInputStream != null) {
+                    bufferedInputStream.close();
+                }
+                if (outputStream != null) {
+                    outputStream.close();
+                }
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -109,14 +129,56 @@ public class DaoProducto {
             e.printStackTrace();
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (ps != null) ps.close();
-                if (con != null) con.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
         }
         return p;
     }
-    
+
+    public List<ProductosCatalogo> listarPefil(int id) {
+        List<ProductosCatalogo> product = new ArrayList<>();
+        String sql = "SELECT u.id,p.Nombres, c.Cantidad, c.PrecioCompra FROM detalle_compras AS c INNER JOIN producto AS p ON c.idProducto = p.idProducto INNER JOIN usuarios AS u ON c.idCompras  = u.id WHERE u.id = ?";
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                ProductosCatalogo p = new ProductosCatalogo();
+                p.setId(rs.getInt(1));
+                p.setNombres(rs.getString(2));
+                p.setDescripcion(rs.getString(3));
+                p.setPrecio(rs.getDouble(4));
+                product.add(p);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return product;
+    }
+
 }

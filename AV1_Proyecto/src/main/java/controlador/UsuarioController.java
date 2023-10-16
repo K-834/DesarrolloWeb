@@ -15,8 +15,6 @@ public class UsuarioController extends HttpServlet {
 
     UsuarioModel model = new UsuarioModel();
     Encryptor encryptor = new Encryptor();
-    
-    
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -57,6 +55,10 @@ public class UsuarioController extends HttpServlet {
                 model.eliminarUsuario(id);
                 doGet(request, response);
                 break;
+            case "eliminarItem":
+                model.eliminarItem(id);
+                response.sendRedirect(request.getContextPath() + "/CatalogoServlet?perfil=" + request.getParameter("usuario-id-perfil-value"));
+                break;
             case "login":
                 try {
                 String encryptPassLogin = encryptor.encryptString(password);
@@ -69,7 +71,7 @@ public class UsuarioController extends HttpServlet {
                     misesion.setAttribute("tipoUsuario", usuarioLogin.getTipo());
                     misesion.setAttribute("usuarioAutenticado", true);
                     response.sendRedirect(request.getContextPath() + "/CatalogoServlet?accion=productos");
-                   // request.getRequestDispatcher("ViewCliente/carrito.jsp").forward(request, response);
+                    // request.getRequestDispatcher("ViewCliente/carrito.jsp").forward(request, response);
                 } else {
                     request.getRequestDispatcher("ViewCliente/index.jsp").forward(request, response);
                 }

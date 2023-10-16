@@ -42,6 +42,7 @@ public class CatalogoServlet extends HttpServlet {
 
     ProductosCatalogo p = new ProductosCatalogo();
     List<ProductosCatalogo> productos = new ArrayList<>();
+    // List<ProductosCatalogo> productosPerf = new ArrayList<>();
     List<Carrito> listaCarrito = new ArrayList<>();
     int item;
     double totalPagar = 0.0;
@@ -59,8 +60,12 @@ public class CatalogoServlet extends HttpServlet {
                 DaoCompra daoComp = new DaoCompra();
                 List<Compra> compras = new ArrayList<>();;
                 int perfil = Integer.parseInt(request.getParameter("perfil"));
+                //     productosPerf = daoProd.listarPefil(perfil);
                 compras = daoComp.MostrarCompras(perfil);
+
                 request.setAttribute("compras", compras);
+                //       request.setAttribute("productosPerfil", productosPerf);
+
                 request.getRequestDispatcher("/ViewCliente/perfil.jsp").forward(request, response);
             } catch (NumberFormatException e) {
                 System.out.println(e);
@@ -184,6 +189,7 @@ public class CatalogoServlet extends HttpServlet {
                         compra.setEstado("CANCELADO");
                         compra.setDetalleCompra(listaCarrito);
                         daoC.GenerarCompra(compra);
+                        listaCarrito.clear();
                         request.getRequestDispatcher("CatalogoServlet?accion=Carrito").forward(request, response);
 
                     } catch (NumberFormatException e) {
@@ -196,6 +202,7 @@ public class CatalogoServlet extends HttpServlet {
                 break;
 
             case "productos":
+
                 productos = daoProd.listar();
                 request.setAttribute("productos", productos);
                 request.getRequestDispatcher("/ViewCliente/productos.jsp").forward(request, response);

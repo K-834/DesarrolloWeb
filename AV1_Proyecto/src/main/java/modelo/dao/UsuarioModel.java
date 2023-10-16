@@ -116,6 +116,19 @@ public class UsuarioModel {
             return false;
         }
     }
+    
+        public boolean eliminarItem(int id) {
+        String sql = "DELETE FROM compras WHERE idCompras = ?";
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            return statement.executeUpdate() > 0;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public Usuario login(String correo, String password) {
         Usuario usuario = new Usuario();

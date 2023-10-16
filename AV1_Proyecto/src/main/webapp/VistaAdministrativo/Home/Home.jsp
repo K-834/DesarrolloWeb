@@ -47,7 +47,7 @@
                         <div class="card-body">
                             <h5 class="card-title"></h5>
                             <p class="card-text"></p>
-                            <a href="/AV1_Proyecto/Pagina1/VistaAdministrativo/Pedidos/GestionPedidos.jsp" class="btn btn-primary">Gestión de Comentarios</a>
+                            <a href="/AV1_Proyecto/VistaAdministrativo/Pedidos/GestionPedidos.jsp" class="btn btn-primary">Gestión de Comentarios</a>
                         </div>
                     </div>
                 </div>
