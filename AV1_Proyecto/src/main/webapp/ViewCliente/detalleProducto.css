@@ -1,0 +1,97 @@
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+.container-description {
+    margin-top: 25px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.cont{
+    padding: 15px;
+    width: 50%;
+}
+
+.cont-txt {
+    padding-top: 15px;
+}
+
+.cont-txt p {
+    margin-bottom: 5px;
+}
+
+.name-product, .name-marca, .precio{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.stock {
+    font-size: 20px;
+    font-family: italic;
+    background-color: #fffbf5;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+    border-style: dotted;
+    border-left: none;
+    border-right: none;
+    color: rgb(124, 81, 0);
+}
+
+.cantidad-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.detalle-pr p{
+    font-size: 18px;
+    color: #808080;
+}
+
+.btn-group .btn {
+    border: solid 1px black;
+}
+
+.btn {
+    width: 100%;
+    height: max-content;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.btn-primary {
+    background-color: #0b5ed7;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #808080;
+    color: white;
+}
+
+.span-link {
+    font-size: 20px;
+}
+
+@media (max-width: 700px){
+    .container-description {
+        flex-direction: column;
+    }
+    .cont {
+        width: 100%;
+    }
+    .container-description .cont .cont-image img {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+    }
+}
