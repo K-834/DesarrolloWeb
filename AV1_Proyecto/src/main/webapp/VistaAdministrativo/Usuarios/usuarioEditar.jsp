@@ -1,10 +1,4 @@
-<%-- 
-    Document   : usuarioEditar
-    Created on : Sep 12, 2023, 3:32:52 PM
-    Author     : aferz
---%>
-
-<%@page import="proyecto.entidades.Usuario"%>
+<%@ page import="modelo.entidades.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Usuario usuario = (Usuario)request.getSession().getAttribute("usuario");
@@ -16,7 +10,7 @@
         <title>Editar Usuario</title>
         <!-- CSS BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="Pagina1/VistaAdministrativo/Usuarios/usuariosEstilos.css">
+        <link rel="stylesheet" href="VistaAdministrativo/Usuarios/usuariosEstilos.css">
     </head>
     <body>
         <main class="reparacion">
@@ -43,7 +37,7 @@
                         <label for="usuario-correo" class="form-label">Correo</label>
                         <input type="email" class="form-control" id="usuario-correo" name="usuario-correo" value="<%=usuario.getCorreo()%>" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 hidden">
                         <label for="usuario-contrasena" class="form-label">Constraseña</label>
                         <input type="password" class="form-control" id="usuario-contrasena" name="usuario-contrasena" value="<%=usuario.getPassword()%>" required>
                     </div>

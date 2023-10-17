@@ -56,3 +56,7 @@
 #barra a {
     color: #232323;
 }
+
+.hidden {
+    display: none;
+}

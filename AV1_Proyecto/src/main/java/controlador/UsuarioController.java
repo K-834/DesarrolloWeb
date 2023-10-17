@@ -39,8 +39,19 @@ public class UsuarioController extends HttpServlet {
 
         switch (accion) {
             case "agregar":
-                model.agregarUsuario(tipo, nombre, correo, password);
-                doGet(request, response);
+                try {
+                    String encryptPassRegistro = encryptor.encryptString(password);
+
+                    if (model.agregarUsuario(tipo, nombre, correo, encryptPassRegistro)) {
+                        List<Usuario> listaUsuarios = model.obtenerUsuarios();
+                        misesion.setAttribute("listaUsuarios", listaUsuarios);
+                        request.getRequestDispatcher("VistaAdministrativo/Usuarios/listaUsuarios.jsp").forward(request, response);
+                    } else {
+                        request.getRequestDispatcher("VistaAdministrativo/Usuarios/usuarioAgregar.jsp").forward(request, response);
+                    }
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
                 break;
             case "ver":
                 Usuario usuarioVer = model.obtenerUsuario(id);
@@ -82,19 +93,18 @@ public class UsuarioController extends HttpServlet {
             break;
             case "registro":
                 try {
-                String encryptPassRegistro = encryptor.encryptString(password);
+                    String encryptPassRegistro = encryptor.encryptString(password);
 
-                if (model.agregarUsuario("CLIENTE", nombre, correo, encryptPassRegistro)) {
-                    Usuario usuarioRegistro = model.login(correo, encryptPassRegistro);
-                    misesion.setAttribute("usuario", usuarioRegistro);
-                    request.getRequestDispatcher("ViewCliente/carrito.jsp").forward(request, response);
-                } else {
-                    request.getRequestDispatcher("ViewCliente/index.jsp").forward(request, response);
+                    if (model.agregarUsuario("CLIENTE", nombre, correo, encryptPassRegistro)) {
+                        Usuario usuarioRegistro = model.login(correo, encryptPassRegistro);
+                        misesion.setAttribute("usuario", usuarioRegistro);
+                        request.getRequestDispatcher("ViewCliente/carrito.jsp").forward(request, response);
+                    } else {
+                        request.getRequestDispatcher("ViewCliente/index.jsp").forward(request, response);
+                    }
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
                 }
-            } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-            }
-
             break;
         }
     }

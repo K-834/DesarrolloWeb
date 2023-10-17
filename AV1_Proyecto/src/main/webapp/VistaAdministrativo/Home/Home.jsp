@@ -37,7 +37,7 @@
                         <div class="card-body">
                             <h5 class="card-title"></h5>
                             <p class="card-text"></p>
-                            <a href="../../../ProductoServlet" class="btn btn-primary">Gestión de Productos</a>
+                            <a href="/AV1_Proyecto/ProductoServlet" class="btn btn-primary">Gestión de Productos</a>
                         </div>
                     </div>
                 </div>
