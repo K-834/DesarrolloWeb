@@ -29,7 +29,7 @@ public class ProductoServlet extends HttpServlet {
         List<Producto> listaProductos = productoData.obtenerLista();
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaProductos", listaProductos);
-        response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
+        response.sendRedirect("/AV1_Proyecto/VistaAdministrativo/Productos/listaProductos.jsp");
     }
 
     @Override

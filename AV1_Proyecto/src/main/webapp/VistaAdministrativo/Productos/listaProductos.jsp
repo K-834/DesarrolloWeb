@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="proyecto.entidades.Producto"%>
+<%@ page import="modelo.entidades.Producto" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     List<Producto> lista = (List<Producto>) request.getSession().getAttribute("listaProductos");

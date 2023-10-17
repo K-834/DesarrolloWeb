@@ -1,5 +1,6 @@
-<%@page import="proyecto.entidades.Usuario"%>
+
 <%@page import="java.util.List"%>
+<%@ page import="modelo.entidades.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     List<Usuario> lista = (List<Usuario>) request.getSession().getAttribute("listaUsuarios");
@@ -12,7 +13,7 @@
         <title>Lista Usuarios</title>
         <!-- CSS BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="Pagina1/VistaAdministrativo/Usuarios/usuariosEstilos.css">
+        <link rel="stylesheet" href="VistaAdministrativo/Usuarios/usuariosEstilos.css">
     </head>
     <body>
         <main class="reparacion">
@@ -25,7 +26,7 @@
                 <h1 class="mb-3 titulo">Lista de Usuarios</h1>
 
                 <div class="ux-agregar-buscar">
-                    <a href="Pagina1/VistaAdministrativo/Usuarios/usuarioAgregar.jsp" class="btn btn-primary mb-3">Agregar Usuario</a>
+                    <a href="/AV1_Proyecto/VistaAdministrativo/Usuarios/usuarioAgregar.jsp" class="btn btn-primary mb-3">Agregar Usuario</a>
                     <button class="btn btn-secondary mb-3" data-limpiar="limpiar">Limpiar Filtro</button>
                     <div class="input-group mb-3">
                         <button type="submit" class="btn btn-outline-secondary" data-buscar="buscar">Buscar</button>
@@ -41,7 +42,6 @@
                             <th scope="col">Tipo</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Correo</th>
-                            <th scope="col">Contraseña</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -54,7 +54,6 @@
                             <td><%=usuario.getTipo()%></td>
                             <td class="usuario-row-nombre"><%=usuario.getNombre()%></td>
                             <td><%=usuario.getCorreo()%></td>
-                            <td><%=usuario.getPassword()%></td>
                             <td>
                                 <form action="/AV1_Proyecto/UsuarioController" method="POST">
                                     <input type="hidden" name="accion" value="ver" />
