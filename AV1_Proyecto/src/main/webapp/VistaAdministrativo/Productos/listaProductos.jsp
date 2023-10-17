@@ -1,8 +1,8 @@
 <%@page import="java.util.List"%>
-<%@ page import="modelo.entidades.Producto" %>
+<%@ page import="modelo.entidades.ProductosCatalogo" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    List<Producto> lista = (List<Producto>) request.getSession().getAttribute("listaProductos");
+    List<ProductosCatalogo> lista = (List<ProductosCatalogo>) request.getSession().getAttribute("listaProductos");
     int cont = 0;
 %>
 <!DOCTYPE html>
@@ -39,34 +39,37 @@
                             <th scope="col">#</th>
                             <th scope="col">Codigo</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Marca</th>
-                            <th scope="col">Modelo</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Stock</th>
                             <th scope="col">Precio S/</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="table-body">
-                        <% for (Producto producto : lista) { %>
+                        <% for (ProductosCatalogo producto : lista) { %>
                         <% cont++;%>
-                        <tr class="producto" id="<%=producto.getCodigo()%>">
+                        <tr class="producto" id="<%=producto.getId()%>">
                             <th scope="row"><%=cont%></th>
-                            <td><%=producto.getCodigo()%></td>
-                            <td class="producto-row-nombre"><%=producto.getNombre()%></td>
-                            <td><%=producto.getMarca()%></td>
-                            <td><%=producto.getModelo()%></td>
+                            <td><%=producto.getId()%></td>
+                            <td class="producto-row-nombre"><%=producto.getNombres()%></td>
+                            <td>
+<%--                                TRABJANDO AQUÍ, DIBUJAR LA IMAGEN DE LOS PRODUCTOS!!--%>
+                                <img src="/AV1_Proyecto/ControladorIMG?id=${producto.getId()}" alt="<%=producto.getDescripcion()%>">
+                            </td>
+                            <td><%=producto.getStock()%></td>
                             <td><%=String.format("%.2f", producto.getPrecio())%></td>
                             <td>
                                 <form action="../../../ProductoServlet" method="POST">
                                     <input type="hidden" name="accion" id="accion" value="ver" />
-                                    <input type="hidden" name="producto-codigo" id="producto-codigo" value="<%=producto.getCodigo()%>" />
+                                    <input type="hidden" name="producto-codigo" id="producto-codigo" value="<%=producto.getId()%>" />
                                     <button type="submit" class="btn btn-success">Editar</button>
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<%=producto.getCodigo()%>">Eliminar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<%=producto.getId()%>">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal<%=producto.getCodigo()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal<%=producto.getId()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -74,13 +77,13 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ¿Seguro que deseas eliminar el producto <%=producto.getNombre()%>?
+                                        ¿Seguro que deseas eliminar el producto <%=producto.getNombres()%>?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         <form action="../../../ProductoServlet" method="POST">
                                             <input type="hidden" name="accion" id="accion" value="eliminar" />
-                                            <input type="hidden" name="producto-codigo" id="producto-codigo" value="<%=producto.getCodigo()%>" />
+                                            <input type="hidden" name="producto-codigo" id="producto-codigo" value="<%=producto.getId()%>" />
                                             <button type="submit" class="btn btn-danger">Eliminar Producto</button>
                                         </form>
                                     </div>

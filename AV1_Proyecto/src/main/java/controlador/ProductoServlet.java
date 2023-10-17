@@ -9,14 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import modelo.ProductoMemoryData;
-import modelo.entidades.Producto;
+
+import modelo.dao.DaoProducto;
+import modelo.entidades.ProductosCatalogo;
 
 
 @WebServlet(name = "ProductoServlet", urlPatterns = {"/ProductoServlet"})
 public class ProductoServlet extends HttpServlet {
     
-    private ProductoMemoryData productoData = new ProductoMemoryData();
+    private DaoProducto productoData = new DaoProducto();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,7 +27,7 @@ public class ProductoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Producto> listaProductos = productoData.obtenerLista();
+        List<ProductosCatalogo> listaProductos = productoData.listar();
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaProductos", listaProductos);
         response.sendRedirect("/AV1_Proyecto/VistaAdministrativo/Productos/listaProductos.jsp");
@@ -44,13 +45,13 @@ public class ProductoServlet extends HttpServlet {
             String modelo = request.getParameter("producto-modelo");
             double precio = Double.parseDouble(request.getParameter("producto-precio"));
             
-            productoData.agregar(new Producto(codigo, nombre, marca, modelo, precio));
+            //productoData.agregar(new Producto(codigo, nombre, marca, modelo, precio));
             response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
         }
         else if(accion.equals("ver")) {
-            Producto producto = productoData.obtener(request.getParameter("producto-codigo"));
+            //Producto producto = productoData.obtener(request.getParameter("producto-codigo"));
             HttpSession misesion = request.getSession();
-            misesion.setAttribute("producto", producto);
+            //misesion.setAttribute("producto", producto);
             response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/productoEditar.jsp");
         }
         else if(accion.equals("editar")) {
@@ -61,11 +62,11 @@ public class ProductoServlet extends HttpServlet {
             String modelo = request.getParameter("producto-modelo");
             double precio = Double.parseDouble(request.getParameter("producto-precio"));
             
-            productoData.modificar(new Producto(codigo, nombre, marca, modelo, precio));
+            //productoData.modificar(new Producto(codigo, nombre, marca, modelo, precio));
             response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
         }
         else if(accion.equals("eliminar")){
-            productoData.eliminar(request.getParameter("producto-codigo"));
+            //productoData.eliminar(request.getParameter("producto-codigo"));
             response.sendRedirect("/AV1_Proyecto/Pagina1/VistaAdministrativo/Productos/listaProductos.jsp");
         }
     }
