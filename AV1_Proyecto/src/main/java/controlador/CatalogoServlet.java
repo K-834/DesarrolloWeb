@@ -20,6 +20,7 @@ import modelo.entidades.Carrito;
 import modelo.entidades.ClienteProd;
 import modelo.entidades.Compra;
 import modelo.entidades.Pago;
+import modelo.entidades.Producto;
 import modelo.entidades.ProductosCatalogo;
 
 /**
@@ -42,6 +43,7 @@ public class CatalogoServlet extends HttpServlet {
 
     ProductosCatalogo p = new ProductosCatalogo();
     List<ProductosCatalogo> productos = new ArrayList<>();
+    List<ProductosCatalogo> marca = new ArrayList<>();
     // List<ProductosCatalogo> productosPerf = new ArrayList<>();
     List<Carrito> listaCarrito = new ArrayList<>();
     int item;
@@ -53,7 +55,7 @@ public class CatalogoServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        marca = daoProd.Marcas();
         String perfilVeri1 = request.getParameter("perfil");
         if (perfilVeri1 != null) {
             try {
@@ -62,15 +64,42 @@ public class CatalogoServlet extends HttpServlet {
                 int perfil = Integer.parseInt(request.getParameter("perfil"));
                 //     productosPerf = daoProd.listarPefil(perfil);
                 compras = daoComp.MostrarCompras(perfil);
-
                 request.setAttribute("compras", compras);
                 //       request.setAttribute("productosPerfil", productosPerf);
-
+                request.setAttribute("marcaProd", marca);
                 request.getRequestDispatcher("/ViewCliente/perfil.jsp").forward(request, response);
             } catch (NumberFormatException e) {
                 System.out.println(e);
             }
         }
+        String productoId = request.getParameter("ver");
+        if (productoId != null) {
+            try {
+                ProductosCatalogo prod = new ProductosCatalogo();
+                int verProd = Integer.parseInt(productoId);
+                //     productosPerf = daoProd.listarPefil(perfil);
+                prod = daoProd.ObtenerProducto(verProd);
+                request.setAttribute("proDetalle", prod);
+                request.setAttribute("marcaProd", marca);
+                request.getRequestDispatcher("/ViewCliente/detalleProducto.jsp").forward(request, response);
+
+            } catch (NumberFormatException e) {
+                System.out.println(e);
+            }
+        }
+
+        String marcaSelecc = request.getParameter("marca");
+        if (marcaSelecc != null) {
+            try {
+                productos = daoProd.buscarPorMarca(marcaSelecc);
+                request.setAttribute("productos", productos);
+                request.getRequestDispatcher("/ViewCliente/productos.jsp").forward(request, response);
+
+            } catch (NumberFormatException e) {
+                System.out.println(e);
+            }
+        }
+
         String accion = request.getParameter("accion");
         switch (accion) {
             case "Comprar":
@@ -96,6 +125,7 @@ public class CatalogoServlet extends HttpServlet {
                 request.setAttribute("VerCompras", listaCarrito);
                 request.setAttribute("contador", listaCarrito.size());
                 request.setAttribute("totalPagar", totalPagar);
+                request.setAttribute("marcaProd", marca);
                 request.getRequestDispatcher("/ViewCliente/pedido.jsp").forward(request, response);
 
                 break;
@@ -153,6 +183,7 @@ public class CatalogoServlet extends HttpServlet {
                     totalPagar = totalPagar + listaCarrito.get(i).getSubTotal();
                 }
                 request.setAttribute("totalPagar", totalPagar);
+                request.setAttribute("marcaProd", marca);
                 request.getRequestDispatcher("/ViewCliente/carrito.jsp").forward(request, response);
                 break;
             case "Borrar":
@@ -202,11 +233,10 @@ public class CatalogoServlet extends HttpServlet {
                 break;
 
             case "productos":
-
                 productos = daoProd.listar();
                 request.setAttribute("productos", productos);
+                request.setAttribute("marcaProd", marca);
                 request.getRequestDispatcher("/ViewCliente/productos.jsp").forward(request, response);
-
             default:
                 request.getRequestDispatcher("/ViewCliente/error.jsp").forward(request, response);
 

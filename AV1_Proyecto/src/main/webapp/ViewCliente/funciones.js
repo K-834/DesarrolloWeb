@@ -13,10 +13,10 @@ $(document).ready(function () {
             if (result.isConfirmed) {
                 eliminar(idp);
                 Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                ).then((result) => {
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                        ).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = "CatalogoServlet?accion=Carrito";
                     }
@@ -41,9 +41,9 @@ $(document).ready(function () {
             }
         });
     }
-    
+
     $("input#Cantidad").keydown(function (event) {
-        if (event.keyCode === 13) { 
+        if (event.keyCode === 13) {
             event.preventDefault();
             var idp = $(this).closest("div").find("input#idprod").val();
             var cantidad = $(this).val();
@@ -62,6 +62,16 @@ $(document).ready(function () {
             });
         }
     });
-    
-    
+
+
+});
+
+document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("marca-button-Producto")) {
+        event.preventDefault();
+        const marcaSeleccionada = event.target.value;
+        const form = document.getElementById("filtroMarcaForm");
+        form.querySelector("input[name='marca']").value = marcaSeleccionada;
+        form.submit();
+    }
 });
