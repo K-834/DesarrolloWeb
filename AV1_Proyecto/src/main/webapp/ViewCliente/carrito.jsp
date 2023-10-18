@@ -20,22 +20,13 @@
         <!-- ICON CDN (BOOTSTRAP ICON) -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
     </head>
     <body>
         <%@include file="header/header.jsp" %>
 
         <main class="main-carrito">
-            <nav class="categorias">
-                <a href="productos.html">CARNES, AVES Y PESCADOS</a>
-                <a href="productos.html">CONGELADOS</a>
-                <a href="productos.html">LACTEOS</a>
-                <a href="productos.html">FRUTAS Y VERDURAS</a>
-                <a href="productos.html">PANADERIA Y PASTELERIA</a>
-                <a href="productos.html">BEBIDAS</a>
-                <a href="productos.html">CUIDADO PERSONAL</a>
-                <a href="productos.html">LIMPIEZA</a>
-            </nav>
+            <%@include file="header/marcas.jsp" %>
             <h1>TU CARRITO</h1>
             <div class="paneles">
                 <div class="productos">
@@ -80,7 +71,17 @@
                         <p class="total">Total<span>S/. ${totalPagar}</span></p>
                     </div>
                     <div class="ux">
-                        <a href="CatalogoServlet?accion=Comprar">IR A PAGAR<i class="bi bi-arrow-right"></i></a>
+                        <c:choose>
+                            <c:when test="${empty usuario}">
+
+                                <a href="/AV1_Proyecto/ViewCliente/Login/Login.jsp" >IR A PAGAR<i class="bi bi-arrow-right"></i></a>
+                                </c:when>    
+                                <c:otherwise>
+
+                                <a href="CatalogoServlet?accion=Comprar" >IR A PAGAR<i class="bi bi-arrow-right"></i></a>
+
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </div>
 

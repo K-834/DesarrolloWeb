@@ -19,16 +19,7 @@
     <%@include file="header/header.jsp" %>
       <link rel="stylesheet" href="/AV1_Proyecto/ViewCliente/styles.css">
     <main class="main-resumen">
-        <nav class="categorias">
-            <a href="">CARNES, AVES Y PESCADOS</a>
-            <a href="">CONGELADOS</a>
-            <a href="">LACTEOS</a>
-            <a href="">FRUTAS Y VERDURAS</a>
-            <a href="">PANADERIA Y PASTELERIA</a>
-            <a href="">BEBIDAS</a>
-            <a href="">CUIDADO PERSONAL</a>
-            <a href="">LIMPIEZA</a>
-        </nav>
+        <%@include file="header/marcas.jsp" %>
         <h1>PEDIDO CONFIRMADO</h1>
         <div class="paneles">
             <div class="panel panel1">

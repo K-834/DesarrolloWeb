@@ -23,16 +23,7 @@
         <%@include file="header/header.jsp" %>
 
         <main class="main-detalle-pedido">
-            <nav class="categorias">
-                <a href="">CARNES, AVES Y PESCADOS</a>
-                <a href="">CONGELADOS</a>
-                <a href="">LACTEOS</a>
-                <a href="">FRUTAS Y VERDURAS</a>
-                <a href="">PANADERIA Y PASTELERIA</a>
-                <a href="">BEBIDAS</a>
-                <a href="">CUIDADO PERSONAL</a>
-                <a href="">LIMPIEZA</a>
-            </nav>
+            <%@include file="header/marcas.jsp" %>
             <h1>DETALLE PEDIDO</h1>
             <div class="paneles">
 

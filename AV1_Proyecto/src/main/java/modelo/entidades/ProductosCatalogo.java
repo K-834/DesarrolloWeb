@@ -14,6 +14,7 @@ public class ProductosCatalogo {
     private int id;
     private String nombres;
     private InputStream foto;
+    private String marca;
     private String descripcion;
     private double precio;
     private int stock;
@@ -77,6 +78,16 @@ public class ProductosCatalogo {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+    
+    
     
     
 }

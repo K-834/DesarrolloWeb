@@ -22,7 +22,6 @@ import modelo.entidades.Compra;
 public class DaoCompra {
 
     db cn = new db();
-    int r = 0;
 
     public int GenerarCompra(Compra compra) {
         String insertCompraSQL = "INSERT INTO compras (idCliente, FechaCompras, Monto, Estado) VALUES (?, ?, ?, ?)";

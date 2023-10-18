@@ -342,6 +342,7 @@ header .user {
             margin: 1em auto;
             font-size: 0.8rem;
             cursor: pointer;
+            text-decoration: none;
         }
 
         & .btn-agregar:hover {
@@ -526,6 +527,7 @@ header .user {
                             border: none;
                             background-color: #f0efed;
                             cursor: pointer;
+                            
                         }
 
                         & button:active {
@@ -621,7 +623,7 @@ header .user {
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
-
+                    
                     & i {
                         margin-left: 0.2em;
                         font-size: 1rem;

@@ -124,6 +124,7 @@ public class DaoProducto {
                 p.setDescripcion(rs.getString(4));
                 p.setPrecio(rs.getInt(5));
                 p.setStock(rs.getInt(6));
+                p.setMarca(rs.getString(7));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -179,6 +180,114 @@ public class DaoProducto {
             }
         }
         return product;
+    }
+
+    public ProductosCatalogo ObtenerProducto(int id) {
+        String sql = "SELECT * FROM producto WHERE idProducto = ?";
+        ProductosCatalogo p = new ProductosCatalogo();
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            rs.next();
+            p.setId(rs.getInt(1));
+            p.setNombres(rs.getString(2));
+            p.setFoto(rs.getBinaryStream(3));
+            p.setDescripcion(rs.getString(4));
+            p.setPrecio(rs.getInt(5));
+            p.setStock(rs.getInt(6));
+            p.setMarca(rs.getString(7));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return p;
+    }
+
+    public List<ProductosCatalogo> buscarPorMarca(String marca) {
+        List<ProductosCatalogo> productos = new ArrayList<>();
+        String sql = "SELECT * FROM producto WHERE Marca = ?";
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, marca);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                ProductosCatalogo p = new ProductosCatalogo();
+                p.setId(rs.getInt(1));
+                p.setNombres(rs.getString(2));
+                p.setFoto(rs.getBinaryStream(3));
+                p.setDescripcion(rs.getString(4));
+                p.setPrecio(rs.getDouble(5));
+                p.setStock(rs.getInt(6));
+                p.setMarca(rs.getString(7));
+                productos.add(p);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return productos;
+    }
+
+    public List<ProductosCatalogo> Marcas() {
+        List<ProductosCatalogo> productos = new ArrayList<>();
+        String sql = "SELECT DISTINCT marca FROM producto";
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                ProductosCatalogo p = new ProductosCatalogo();
+                p.setMarca(rs.getString(1));
+                productos.add(p);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        return productos;
     }
 
 }
